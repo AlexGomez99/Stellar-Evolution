@@ -19,10 +19,14 @@ public class Board : MonoBehaviour
     private BackgroundTile[,] allTiles;
     public GameObject[,] allDots;
     private FindMatches findMatches;
+    public int basePieceValue = 20;
+    private int streakValue = 1;
+    private ScoreManager scoreManager;
     
     // Start is called before the first frame update
     void Start()
     {
+        scoreManager = FindObjectOfType<ScoreManager>();
         findMatches = FindObjectOfType<FindMatches>();
         allTiles = new BackgroundTile[width, height];
         allDots = new GameObject[width, height];
@@ -36,7 +40,8 @@ public class Board : MonoBehaviour
             for(int j = 0; j < height; j++)
             {
                 Vector2 tempPosition = new Vector2(i, j + offSet);
-                GameObject backgroundTile = Instantiate(tilePrefab, tempPosition, Quaternion.identity) as GameObject;
+                Vector2 tilePosition = new Vector2(i, j);
+                GameObject backgroundTile = Instantiate(tilePrefab, tilePosition, Quaternion.identity) as GameObject;
                 backgroundTile.transform.parent = this.transform;
                 backgroundTile.name = "( " + i + ", " + j + " )";
                 int dotToUse = Random.Range(0, dots.Length);
@@ -46,7 +51,7 @@ public class Board : MonoBehaviour
                 {
                     dotToUse = Random.Range(0, dots.Length);
                     maxIterations++;
-                    Debug.Log(maxIterations);
+                    //Debug.Log(maxIterations);
                 }
                 maxIterations = 0;
 
@@ -99,6 +104,7 @@ public class Board : MonoBehaviour
         {
             findMatches.currentMatches.Remove(allDots[column, row]);
             Destroy(allDots[column, row]);
+            scoreManager.IncreaseScore(basePieceValue * streakValue);
             allDots[column, row] = null;
         }
     }
@@ -184,10 +190,12 @@ public class Board : MonoBehaviour
 
         while (MatchesOnBoard())
         {
+            streakValue++;
             yield return new WaitForSeconds(.5f);
             DestroyMatches();
         }
         yield return new WaitForSeconds(.5f);
         currentState = GameState.move;
+        streakValue = 1;
     }
 }
