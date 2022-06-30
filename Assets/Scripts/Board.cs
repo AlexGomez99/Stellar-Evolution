@@ -19,7 +19,7 @@ public class Board : MonoBehaviour
     private BackgroundTile[,] allTiles;
     public GameObject[,] allDots;
     private FindMatches findMatches;
-    public int basePieceValue = 20;
+    public int basePieceValue;
     private int streakValue = 1;
     private ScoreManager scoreManager;
     
