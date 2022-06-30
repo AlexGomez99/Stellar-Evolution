@@ -22,6 +22,8 @@ public class Board : MonoBehaviour
     public int basePieceValue;
     private int streakValue = 1;
     private ScoreManager scoreManager;
+
+    private int count = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -104,6 +106,8 @@ public class Board : MonoBehaviour
         {
             findMatches.currentMatches.Remove(allDots[column, row]);
             Destroy(allDots[column, row]);
+            count++;
+            //Debug.Log(count);
             scoreManager.IncreaseScore(basePieceValue * streakValue);
             allDots[column, row] = null;
         }
@@ -121,6 +125,9 @@ public class Board : MonoBehaviour
                 }
             }
         }
+        Debug.Log(count);
+        count = 0;
+        Debug.Log(count);
         StartCoroutine(DecreaseRowCo());
     }
 
