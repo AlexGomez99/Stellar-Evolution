@@ -42,6 +42,7 @@ public class Dot : MonoBehaviour
     {
         //FindMatches();
 
+        //this makes the color grey during a match
         if (isMatched)
         {
             SpriteRenderer mySprite = GetComponent<SpriteRenderer>();
@@ -122,6 +123,7 @@ public class Dot : MonoBehaviour
         //Debug.Log(firstTouchPosition);
     }
 
+    //everything starts here
     private void OnMouseUp()
     {
         if (board.currentState == GameState.move)
@@ -131,11 +133,13 @@ public class Dot : MonoBehaviour
         }
     }
 
+    // calulating the angel of the mouse direction   
     void CalculateAngle()
     {
         if(Mathf.Abs(finalTouchPosition.y - firstTouchPosition.y) > swipeResist || Mathf.Abs(finalTouchPosition.x - firstTouchPosition.x) > swipeResist)
         {
             swipeAngle = Mathf.Atan2(finalTouchPosition.y - firstTouchPosition.y, finalTouchPosition.x - firstTouchPosition.x) * 180 / Mathf.PI;
+            Debug.Log("swipe angel: "+ swipeAngle);
             MovePieces();
             board.currentState = GameState.wait;
         }
@@ -144,7 +148,7 @@ public class Dot : MonoBehaviour
             board.currentState = GameState.move;
         }
     }
-
+    //determines the postion of the mouse right,up,left,down
     void MovePieces()
     {
         if(swipeAngle > -45 && swipeAngle <= 45 && column < board.width - 1)

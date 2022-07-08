@@ -100,6 +100,7 @@ public class Board : MonoBehaviour
         return false;
     }
 
+    //this is the function destroys game objects in which they are matched
     private void DestroyMatchesAt(int column, int row)
     {
         if(allDots[column, row].GetComponent<Dot>().isMatched)
@@ -125,9 +126,9 @@ public class Board : MonoBehaviour
                 }
             }
         }
-        Debug.Log(count);
+        // Debug.Log(count);
         count = 0;
-        Debug.Log(count);
+        //Debug.Log(count);
         StartCoroutine(DecreaseRowCo());
     }
 
