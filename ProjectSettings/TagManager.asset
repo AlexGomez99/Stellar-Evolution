@@ -12,6 +12,8 @@ TagManager:
   - Red Dot
   - Violet Dot
   - Yellow Dot
+  - Dust Clump
+  - Special Helium
   layers:
   - Default
   - TransparentFX
