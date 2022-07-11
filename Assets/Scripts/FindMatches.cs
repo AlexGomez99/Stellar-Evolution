@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+//testing script 
 //every frame checks the whole array of dots for horizontal and vertical matches and if it finds one it adds to a list
 
 public class FindMatches : MonoBehaviour
