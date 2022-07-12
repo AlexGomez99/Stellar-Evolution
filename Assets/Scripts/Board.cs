@@ -23,6 +23,7 @@ public class Board : MonoBehaviour
     private int streakValue = 1;
     private ScoreManager scoreManager;
 
+    private int dotNumber = 0;
     private int count = 0;
     
     // Start is called before the first frame update
@@ -46,12 +47,12 @@ public class Board : MonoBehaviour
                 GameObject backgroundTile = Instantiate(tilePrefab, tilePosition, Quaternion.identity) as GameObject;
                 backgroundTile.transform.parent = this.transform;
                 backgroundTile.name = "( " + i + ", " + j + " )";
-                int dotToUse = Random.Range(0, dots.Length);
+                int dotToUse = DotChooser();
                 
                 int maxIterations = 0;
                 while(MatchesAt(i, j, dots[dotToUse]) && maxIterations < 100)
                 {
-                    dotToUse = Random.Range(0, dots.Length);
+                    dotToUse = DotChooser();
                     maxIterations++;
                     //Debug.Log(maxIterations);
                 }
@@ -163,7 +164,7 @@ public class Board : MonoBehaviour
                 if(allDots[i, j] == null)
                 {
                     Vector2 tempPosition = new Vector2(i, j + offSet);
-                    int dotToUse = Random.Range(0, dots.Length);
+                    int dotToUse = DotChooser();
                     GameObject piece = Instantiate(dots[dotToUse], tempPosition, Quaternion.identity);
                     allDots[i, j] = piece;
                     piece.GetComponent<Dot>().row = j;
@@ -297,5 +298,38 @@ public class Board : MonoBehaviour
             }
         }
         return true;
+    }
+    private int DotChooser()
+    {
+   
+     int numberGenerator = 0;
+     int dotChoice = 0;
+   numberGenerator = Random.Range(0,100);
+   if(numberGenerator == 0){
+          dotChoice = 0;
+   }
+   else{
+          numberGenerator = Random.Range(0,100);
+          if(numberGenerator < 5){
+                dotChoice = 1;
+          }
+          else{
+               numberGenerator = Random.Range(1,100);
+               if(numberGenerator < 25){
+                      dotChoice = 2;
+               }
+               else if(numberGenerator >=25 && numberGenerator < 50)
+               {
+                      dotChoice = 3;
+               }
+               else if(numberGenerator >= 50 && numberGenerator < 75){
+                      dotChoice = 4;
+               }
+               else if(numberGenerator >= 75){
+                      dotChoice = 5;
+               }
+          }
+   }
+   return dotChoice;
     }
 }

@@ -175,11 +175,11 @@ MonoBehaviour:
   offSet: 20
   tilePrefab: {fileID: 3045270244796084577, guid: 86d12e60a3baf2c45a48dea9084c1325, type: 3}
   dots:
-  - {fileID: 135944314311761992, guid: 8100429b1bb43a14dab1cf4e7c1ade75, type: 3}
   - {fileID: 7078337626321347104, guid: 214c6a82f1eca734583a35afd9ad62e8, type: 3}
+  - {fileID: 1634066539959185894, guid: 3dfb5199e4011284687e94085e7d7a91, type: 3}
+  - {fileID: 135944314311761992, guid: 8100429b1bb43a14dab1cf4e7c1ade75, type: 3}
   - {fileID: 582571981393890206, guid: e866bd5140b4af941a2d91cbb0a906f2, type: 3}
   - {fileID: 2113660572391970442, guid: de1ffd293d1b97a4884cb97976b6dd16, type: 3}
-  - {fileID: 1634066539959185894, guid: 3dfb5199e4011284687e94085e7d7a91, type: 3}
   - {fileID: 5886796804173833587, guid: 7a313fffe70189549baa49f9e9b56d81, type: 3}
   basePieceValue: 5
 --- !u!114 &110241441
