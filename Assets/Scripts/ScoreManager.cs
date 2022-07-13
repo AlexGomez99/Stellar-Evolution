@@ -6,11 +6,18 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public Text scoreText;
+    public Text highscoreText;
     public int score;
+
+
+    
+
+
 
     // Start is called before the first frame update
     void Start()
     {
+        
         
     }
 
@@ -24,5 +31,6 @@ public class ScoreManager : MonoBehaviour
     {
         //Debug.Log(amountToIncrease);
         score += amountToIncrease;
+       
     }
 }
