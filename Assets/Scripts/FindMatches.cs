@@ -44,7 +44,7 @@ public class FindMatches : MonoBehaviour
                         {
                             if(currentDot.tag == "Dust Clump")
                             { 
-                                Debug.Log("Dust Clump");
+                               // Debug.Log("Dust Clump");
                             }
                             else if (leftDot.tag == currentDot.tag && rightDot.tag == currentDot.tag)
                             {
@@ -77,7 +77,7 @@ public class FindMatches : MonoBehaviour
                         {
                             if (currentDot.tag == "Dust Clump")
                             {
-                                Debug.Log("Dust Clump");
+//                                Debug.Log("Dust Clump");
                             }
                            else if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag)
                             {

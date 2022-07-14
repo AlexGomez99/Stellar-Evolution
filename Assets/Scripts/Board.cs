@@ -66,6 +66,7 @@ public class Board : MonoBehaviour
                 allDots[i, j] = dot;
             }
         }
+        DestroyMatches();
     }
 
     private bool MatchesAt(int column, int row, GameObject piece)
@@ -107,22 +108,27 @@ public class Board : MonoBehaviour
        // Vector2 tempPosition = new Vector2(column, row + offSet);
         if (allDots[column, row].GetComponent<Dot>().isMatched)
         {
-            if (allDots[column, row].tag == "Special Heluim")
+            if (allDots[column, row].tag == "Special Helium")
             {
-                int SpecialHeluim = basePieceValue * streakValue;
-            }
+                Debug.Log("Special Helium");
+                basePieceValue += 10;
 
-                    //findMatches.currentMatches.Remove(allDots[column, row]);
+
+            }
+            Debug.Log(basePieceValue);
+            findMatches.currentMatches.Remove(allDots[column, row]);
             Destroy(allDots[column, row]);
             
             count++;
 
             //Debug.Log(count);
 
-            
-            int amountToIncrese = basePieceValue * streakValue;
+            scoreManager.IncreaseScore(basePieceValue * streakValue);
 
-            
+            allDots[column, row] = null;
+
+
+
 
 
             scoreManager.IncreaseScore(basePieceValue * streakValue);
