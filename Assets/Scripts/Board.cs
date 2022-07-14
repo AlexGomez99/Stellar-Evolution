@@ -116,7 +116,7 @@ public class Board : MonoBehaviour
 
             }
             Debug.Log(basePieceValue);
-            findMatches.currentMatches.Remove(allDots[column, row]);
+          //  findMatches.currentMatches.Remove(allDots[column, row]);
             Destroy(allDots[column, row]);
             
             count++;
@@ -125,13 +125,6 @@ public class Board : MonoBehaviour
 
             scoreManager.IncreaseScore(basePieceValue * streakValue);
 
-            allDots[column, row] = null;
-
-
-
-
-
-            scoreManager.IncreaseScore(basePieceValue * streakValue);
            if(count < 4)
             {
                 allDots[column, row] = null;
@@ -193,7 +186,6 @@ public class Board : MonoBehaviour
                     if(count > 3)
                     {
                         dotToUse = 1;
-                        
                     }
                     count = 0;
                     GameObject piece = Instantiate(dots[dotToUse], tempPosition, Quaternion.identity);

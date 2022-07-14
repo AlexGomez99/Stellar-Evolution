@@ -170,8 +170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 1
-  width: 7
-  height: 10
+  width: 8
+  height: 8
   offSet: 20
   tilePrefab: {fileID: 3045270244796084577, guid: 86d12e60a3baf2c45a48dea9084c1325, type: 3}
   dots:
@@ -182,6 +182,7 @@ MonoBehaviour:
   - {fileID: 2113660572391970442, guid: de1ffd293d1b97a4884cb97976b6dd16, type: 3}
   - {fileID: 5886796804173833587, guid: 7a313fffe70189549baa49f9e9b56d81, type: 3}
   basePieceValue: 5
+  count: 0
 --- !u!114 &110241441
 MonoBehaviour:
   m_ObjectHideFlags: 0
