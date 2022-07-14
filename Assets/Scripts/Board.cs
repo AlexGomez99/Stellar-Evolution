@@ -22,8 +22,9 @@ public class Board : MonoBehaviour
     public int basePieceValue;
     private int streakValue = 1;
     private ScoreManager scoreManager;
+    private bool specialSpawn = false;
 
-    private int count = 0;
+    public int count = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -46,12 +47,12 @@ public class Board : MonoBehaviour
                 GameObject backgroundTile = Instantiate(tilePrefab, tilePosition, Quaternion.identity) as GameObject;
                 backgroundTile.transform.parent = this.transform;
                 backgroundTile.name = "( " + i + ", " + j + " )";
-                int dotToUse = Random.Range(0, dots.Length);
+                int dotToUse = DotToChoose();
                 
                 int maxIterations = 0;
                 while(MatchesAt(i, j, dots[dotToUse]) && maxIterations < 100)
                 {
-                    dotToUse = Random.Range(0, dots.Length);
+                    dotToUse = DotToChoose();
                     maxIterations++;
                     //Debug.Log(maxIterations);
                 }
@@ -103,15 +104,17 @@ public class Board : MonoBehaviour
     //this is the function destroys game objects in which they are matched
     private void DestroyMatchesAt(int column, int row)
     {
-        if(allDots[column, row].GetComponent<Dot>().isMatched)
+       // Vector2 tempPosition = new Vector2(column, row + offSet);
+        if (allDots[column, row].GetComponent<Dot>().isMatched)
         {
             if (allDots[column, row].tag == "Special Heluim")
             {
                 int SpecialHeluim = basePieceValue * streakValue;
             }
 
-                    findMatches.currentMatches.Remove(allDots[column, row]);
+                    //findMatches.currentMatches.Remove(allDots[column, row]);
             Destroy(allDots[column, row]);
+            
             count++;
 
             //Debug.Log(count);
@@ -123,8 +126,11 @@ public class Board : MonoBehaviour
 
 
             scoreManager.IncreaseScore(basePieceValue * streakValue);
+           if(count < 4)
+            {
+                allDots[column, row] = null;
+            } 
             
-            allDots[column, row] = null;
         }
     }
 
@@ -141,7 +147,7 @@ public class Board : MonoBehaviour
             }
         }
         // Debug.Log(count);
-        count = 0;
+        
         //Debug.Log(count);
         StartCoroutine(DecreaseRowCo());
     }
@@ -177,14 +183,22 @@ public class Board : MonoBehaviour
                 if(allDots[i, j] == null)
                 {
                     Vector2 tempPosition = new Vector2(i, j + offSet);
-                    int dotToUse = Random.Range(0, dots.Length);
+                    int dotToUse = DotToChoose();
+                    if(count > 3)
+                    {
+                        dotToUse = 1;
+                        
+                    }
+                    count = 0;
                     GameObject piece = Instantiate(dots[dotToUse], tempPosition, Quaternion.identity);
                     allDots[i, j] = piece;
                     piece.GetComponent<Dot>().row = j;
                     piece.GetComponent<Dot>().column = i;
                 }
+                
             }
         }
+        specialSpawn = false;
     }
 
     private bool MatchesOnBoard()
@@ -311,5 +325,29 @@ public class Board : MonoBehaviour
             }
         }
         return true;
+    }
+
+    private int DotToChoose()
+    {
+        int dotNum = 0;
+        dotNum = Random.Range(0, 100);
+        if(dotNum == 0)
+        {
+            return 0;
+        }
+        else
+        {
+            dotNum = Random.Range(0, 100);
+            if(dotNum < 5)
+            {
+                return 1;
+            }
+            else
+            {
+                dotNum = Random.Range(2, 6);
+                return dotNum;
+            }
+        }
+
     }
 }

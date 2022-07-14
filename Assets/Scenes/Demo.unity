@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -179,8 +179,6 @@ MonoBehaviour:
   - {fileID: 1634066539959185894, guid: 3dfb5199e4011284687e94085e7d7a91, type: 3}
   - {fileID: 135944314311761992, guid: 8100429b1bb43a14dab1cf4e7c1ade75, type: 3}
   - {fileID: 582571981393890206, guid: e866bd5140b4af941a2d91cbb0a906f2, type: 3}
-  - {fileID: 5485637691970467967, guid: 614e25ceb6341a249b833521fbbc6e14, type: 3}
-  - {fileID: 9004129904462222843, guid: df06e0f562f6c6c4bb24fdba0de3ab11, type: 3}
   - {fileID: 2113660572391970442, guid: de1ffd293d1b97a4884cb97976b6dd16, type: 3}
   - {fileID: 5886796804173833587, guid: 7a313fffe70189549baa49f9e9b56d81, type: 3}
   basePieceValue: 5
@@ -715,4 +713,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1446561919}
+  highscoreText: {fileID: 0}
   score: 0
