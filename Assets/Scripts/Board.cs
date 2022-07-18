@@ -116,7 +116,7 @@ public class Board : MonoBehaviour
 
 
             }
-            //Debug.Log(basePieceValue);
+            Debug.Log(basePieceValue);
           //  findMatches.currentMatches.Remove(allDots[column, row]);
             Destroy(allDots[column, row]);
             
@@ -124,20 +124,18 @@ public class Board : MonoBehaviour
 
             //Debug.Log(count);
 
+
+
             scoreManager.IncreaseScore(basePieceValue * streakValue);
+            basePieceValue = 5;
+           
 
 
-              allDots[column, row] = null;
-            if(count == 4)
+           if(count < 4)
             {
-                Vector2 tempPosition = new Vector2(column, row + offSet);
-                GameObject piece = Instantiate(dots[1], tempPosition, Quaternion.identity);
-                allDots[column, row] = piece;
-                piece.GetComponent<Dot>().row = row;
-                piece.GetComponent<Dot>().column = column;
-            }
-
-
+                allDots[column, row] = null;
+            } 
+            
         }
     }
 
