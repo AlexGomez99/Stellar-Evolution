@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -71,15 +71,45 @@ public class FindMatches : MonoBehaviour
                     }
 
                     //checks for v matches
-                    if (j > 0 && j < board.height - 1)
+                    if (j > 1 && j < board.height - 2)
                     {
                         GameObject upDot = board.allDots[i, j + 1];
                         GameObject downDot = board.allDots[i, j - 1];
+                        GameObject upDotTwo = board.allDots[i, j + 2];
+                        GameObject downDotTwo = board.allDots[i, j - 2];
                         if (upDot != null && downDot != null)
                         {
                             if (currentDot.tag == "Dust Clump")
                             {
                                 //                                Debug.Log("Dust Clump");
+                            }
+                            else if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag && upDotTwo.tag == currentDot.tag && downDotTwo.tag == currentDot.tag)
+                            {
+                                upDot.GetComponent<Dot>().isMatched = true;
+                                upDotTwo.GetComponent<Dot>().isMatched = true;
+                                downDot.GetComponent<Dot>().isMatched = true;
+                                downDotTwo.GetComponent<Dot>().isMatched = true;
+                                currentDot.GetComponent<Dot>().isMatched = true;
+                                Debug.Log("we got a 5 match");
+
+                            }
+                            else if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag && upDotTwo.tag == currentDot.tag)
+                            {
+
+                                upDot.GetComponent<Dot>().isMatched = true;
+                                upDotTwo.GetComponent<Dot>().isMatched = true;
+                                downDot.GetComponent<Dot>().isMatched = true;
+                                currentDot.GetComponent<Dot>().isMatched = true;
+                                Debug.Log("we got a 4 match");
+                            }
+                            else if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag && downDotTwo.tag == currentDot.tag)
+                            {
+                                upDot.GetComponent<Dot>().isMatched = true;
+                                downDot.GetComponent<Dot>().isMatched = true;
+                                downDotTwo.GetComponent<Dot>().isMatched = true;
+                                currentDot.GetComponent<Dot>().isMatched = true;
+                                Debug.Log("we got a 4 match");
+
                             }
                             else if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag)
                             {
@@ -103,44 +133,6 @@ public class FindMatches : MonoBehaviour
                                                             }*/
 
                             }
-
-                            if (j > 1 && j < board.height - 2)
-                            {
-                                GameObject upDotTwo = board.allDots[i, j + 2];
-                                GameObject downDotTwo = board.allDots[i, j - 2];
-                                if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag && upDotTwo.tag == currentDot.tag && downDotTwo.tag == currentDot.tag)
-                                {
-                                    upDot.GetComponent<Dot>().isMatched = true;
-                                    upDotTwo.GetComponent<Dot>().isMatched = true;
-                                    downDot.GetComponent<Dot>().isMatched = true;
-                                    downDotTwo.GetComponent<Dot>().isMatched = true;
-                                    currentDot.GetComponent<Dot>().isMatched = true;
-                                    Debug.Log("we got a 5 match");
-                                }
-
-
-                                else if (j > 1 && j < board.height - 2 && upDot.tag == currentDot.tag && downDot.tag == currentDot.tag && upDotTwo.tag == currentDot.tag)
-                                {
-
-                                    upDot.GetComponent<Dot>().isMatched = true;
-                                    upDotTwo.GetComponent<Dot>().isMatched = true;
-                                    downDot.GetComponent<Dot>().isMatched = true;
-                                    currentDot.GetComponent<Dot>().isMatched = true;
-                                    Debug.Log("we got a 4 match");
-                                }
-                                else if (j > 1 && j < board.height - 2 && upDot.tag == currentDot.tag && downDot.tag == currentDot.tag && downDotTwo.tag == currentDot.tag)
-                                {
-                                    upDot.GetComponent<Dot>().isMatched = true;
-                                    downDot.GetComponent<Dot>().isMatched = true;
-                                    downDotTwo.GetComponent<Dot>().isMatched = true;
-                                    currentDot.GetComponent<Dot>().isMatched = true;
-                                    Debug.Log("we got a 4 match");
-
-                                }
-
-                            }
-
-
                         }
                     }
                 }

@@ -22,7 +22,7 @@ public class Dot : MonoBehaviour
     private Vector2 tempPosition;
     public float swipeAngle = 0;
     public float swipeResist = 1f;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,12 +50,12 @@ public class Dot : MonoBehaviour
         }
         targetX = column;
         targetY = row;
-        if(Mathf.Abs(targetX - transform.position.x) > .1)
+        if (Mathf.Abs(targetX - transform.position.x) > .1)
         {
             //Move Towards the target
             tempPosition = new Vector2(targetX, transform.position.y);
             transform.position = Vector2.Lerp(transform.position, tempPosition, .6f);
-            if(board.allDots[column, row] != this.gameObject)
+            if (board.allDots[column, row] != this.gameObject)
             {
                 board.allDots[column, row] = this.gameObject;
             }
@@ -89,7 +89,7 @@ public class Dot : MonoBehaviour
     public IEnumerator CheckMoveCo()
     {
         yield return new WaitForSeconds(.5f);
-        if(otherDot != null)
+        if (otherDot != null)
         {
             if (!isMatched && !otherDot.GetComponent<Dot>().isMatched)
             {
@@ -103,7 +103,7 @@ public class Dot : MonoBehaviour
             else
             {
                 board.DestroyMatches();
-                
+
             }
             otherDot = null;
         }
@@ -112,7 +112,7 @@ public class Dot : MonoBehaviour
     private void OnMouseDown()
     {
         //Destroy the hint
-        if(hintManager != null)
+        if (hintManager != null)
         {
             hintManager.DestroyHint();
         }
@@ -136,10 +136,10 @@ public class Dot : MonoBehaviour
     // calulating the angel of the mouse direction   
     void CalculateAngle()
     {
-        if(Mathf.Abs(finalTouchPosition.y - firstTouchPosition.y) > swipeResist || Mathf.Abs(finalTouchPosition.x - firstTouchPosition.x) > swipeResist)
+        if (Mathf.Abs(finalTouchPosition.y - firstTouchPosition.y) > swipeResist || Mathf.Abs(finalTouchPosition.x - firstTouchPosition.x) > swipeResist)
         {
             swipeAngle = Mathf.Atan2(finalTouchPosition.y - firstTouchPosition.y, finalTouchPosition.x - firstTouchPosition.x) * 180 / Mathf.PI;
-            Debug.Log("swipe angel: "+ swipeAngle);
+            // Debug.Log("swipe angel: "+ swipeAngle);
             MovePieces();
             board.currentState = GameState.wait;
         }
@@ -151,7 +151,7 @@ public class Dot : MonoBehaviour
     //determines the postion of the mouse right,up,left,down
     void MovePieces()
     {
-        if(swipeAngle > -45 && swipeAngle <= 45 && column < board.width - 1)
+        if (swipeAngle > -45 && swipeAngle <= 45 && column < board.width - 1)
         {
             //Right Swipe
             otherDot = board.allDots[column + 1, row];
@@ -159,7 +159,8 @@ public class Dot : MonoBehaviour
             previousColumn = column;
             otherDot.GetComponent<Dot>().column -= 1;
             column += 1;
-        } else if (swipeAngle > 45 && swipeAngle <= 135 && row < board.height - 1)
+        }
+        else if (swipeAngle > 45 && swipeAngle <= 135 && row < board.height - 1)
         {
             //Up Swipe
             otherDot = board.allDots[column, row + 1];
@@ -167,7 +168,8 @@ public class Dot : MonoBehaviour
             previousColumn = column;
             otherDot.GetComponent<Dot>().row -= 1;
             row += 1;
-        } else if ((swipeAngle > 135 || swipeAngle <= -135) && column > 0)
+        }
+        else if ((swipeAngle > 135 || swipeAngle <= -135) && column > 0)
         {
             //Left Swipe
             otherDot = board.allDots[column - 1, row];
@@ -175,7 +177,8 @@ public class Dot : MonoBehaviour
             previousColumn = column;
             otherDot.GetComponent<Dot>().column += 1;
             column -= 1;
-        } else if (swipeAngle < -45 && swipeAngle >= -135 && row > 0)
+        }
+        else if (swipeAngle < -45 && swipeAngle >= -135 && row > 0)
         {
             //Down Swipe
             otherDot = board.allDots[column, row - 1];
@@ -189,7 +192,7 @@ public class Dot : MonoBehaviour
 
     void FindMatches()
     {
-        if(column > 0 && column < board.width - 1)
+        if (column > 0 && column < board.width - 1)
         {
             GameObject leftDot1 = board.allDots[column - 1, row];
             GameObject rightDot1 = board.allDots[column + 1, row];
@@ -205,18 +208,20 @@ public class Dot : MonoBehaviour
         }
         if (row > 0 && row < board.height - 1)
         {
-            GameObject upDot1 = board.allDots[column, row + 1];
-            GameObject downDot1 = board.allDots[column, row - 1];
-            if (upDot1 != null && downDot1 != null)
             {
-                if (upDot1.tag == this.gameObject.tag && downDot1.tag == this.gameObject.tag)
+                GameObject upDot1 = board.allDots[column, row + 1];
+                GameObject downDot1 = board.allDots[column, row - 1];
+                if (upDot1 != null && downDot1 != null)
                 {
-                    upDot1.GetComponent<Dot>().isMatched = true;
-                    downDot1.GetComponent<Dot>().isMatched = true;
-                    isMatched = true;
+                    if (upDot1.tag == this.gameObject.tag && downDot1.tag == this.gameObject.tag)
+                    {
+                        upDot1.GetComponent<Dot>().isMatched = true;
+                        downDot1.GetComponent<Dot>().isMatched = true;
+                        isMatched = true;
+                    }
                 }
             }
         }
-    }
 
+    }
 }

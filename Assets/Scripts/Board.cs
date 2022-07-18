@@ -108,28 +108,36 @@ public class Board : MonoBehaviour
        // Vector2 tempPosition = new Vector2(column, row + offSet);
         if (allDots[column, row].GetComponent<Dot>().isMatched)
         {
+            count++;
             if (allDots[column, row].tag == "Special Helium")
             {
-                Debug.Log("Special Helium");
+                //Debug.Log("Special Helium");
                 basePieceValue += 10;
 
 
             }
-            Debug.Log(basePieceValue);
+            //Debug.Log(basePieceValue);
           //  findMatches.currentMatches.Remove(allDots[column, row]);
             Destroy(allDots[column, row]);
             
-            count++;
+
 
             //Debug.Log(count);
 
             scoreManager.IncreaseScore(basePieceValue * streakValue);
 
-           if(count < 4)
+
+              allDots[column, row] = null;
+            if(count == 4)
             {
-                allDots[column, row] = null;
-            } 
-            
+                Vector2 tempPosition = new Vector2(column, row + offSet);
+                GameObject piece = Instantiate(dots[1], tempPosition, Quaternion.identity);
+                allDots[column, row] = piece;
+                piece.GetComponent<Dot>().row = row;
+                piece.GetComponent<Dot>().column = column;
+            }
+
+
         }
     }
 
@@ -142,13 +150,17 @@ public class Board : MonoBehaviour
                 if(allDots[i, j] != null)
                 {
                     DestroyMatchesAt(i, j);
+                    
                 }
             }
         }
         // Debug.Log(count);
-        
+
+
         //Debug.Log(count);
-        StartCoroutine(DecreaseRowCo());
+         StartCoroutine(DecreaseRowCo());
+
+
     }
 
     private IEnumerator DecreaseRowCo()
@@ -183,20 +195,20 @@ public class Board : MonoBehaviour
                 {
                     Vector2 tempPosition = new Vector2(i, j + offSet);
                     int dotToUse = DotToChoose();
-                    if(count > 3)
-                    {
-                        dotToUse = 1;
-                    }
+                   // Debug.Log(count);
+
+                        GameObject piece = Instantiate(dots[dotToUse], tempPosition, Quaternion.identity);
+                        allDots[i, j] = piece;
+                        piece.GetComponent<Dot>().row = j;
+                        piece.GetComponent<Dot>().column = i;
+
                     count = 0;
-                    GameObject piece = Instantiate(dots[dotToUse], tempPosition, Quaternion.identity);
-                    allDots[i, j] = piece;
-                    piece.GetComponent<Dot>().row = j;
-                    piece.GetComponent<Dot>().column = i;
+
+
                 }
                 
             }
         }
-        specialSpawn = false;
     }
 
     private bool MatchesOnBoard()
@@ -335,10 +347,11 @@ public class Board : MonoBehaviour
         }
         else
         {
+
             dotNum = Random.Range(0, 100);
             if(dotNum < 5)
             {
-                return 1;
+                return 0;
             }
             else
             {
