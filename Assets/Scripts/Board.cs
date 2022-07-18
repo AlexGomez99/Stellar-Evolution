@@ -111,13 +111,15 @@ public class Board : MonoBehaviour
             if (allDots[column, row].tag == "Special Helium")
             {
                 Debug.Log("Special Helium");
-            
+                    
                 basePieceValue += 5;
                
                 
 
             }
             Debug.Log(basePieceValue);
+
+           
           //  findMatches.currentMatches.Remove(allDots[column, row]);
             Destroy(allDots[column, row]);
             
@@ -126,20 +128,13 @@ public class Board : MonoBehaviour
             //Debug.Log(count);
 
 
-            
-
-            
-
-
-
-            
 
             scoreManager.IncreaseScore(basePieceValue * streakValue);
             basePieceValue = 5;
+           
 
-            
 
-           if(count < 4)
+            if (count < 4)
             {
 
                 allDots[column, row] = null;
