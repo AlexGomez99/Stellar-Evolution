@@ -29,14 +29,15 @@ public class Board : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         scoreManager = FindObjectOfType<ScoreManager>();
         findMatches = FindObjectOfType<FindMatches>();
         allTiles = new BackgroundTile[width, height];
         allDots = new GameObject[width, height];
-        SetUp();
+        
     }
 
-    private void SetUp()
+    public void SetUp()
     {
         for (int i = 0; i < width; i++)
         {
