@@ -11,6 +11,10 @@ public class Dot : MonoBehaviour
     public int previousRow;
     public int targetX;
     public int targetY;
+
+    public int x_offfset = -4; // This is how you change the pos of the boards x aixs
+    public int y_offfset = 2; // This is how you change the pos of the boards y aixs
+
     public bool isMatched = false;
 
     private HintManager hintManager;
@@ -48,8 +52,8 @@ public class Dot : MonoBehaviour
             SpriteRenderer mySprite = GetComponent<SpriteRenderer>();
             mySprite.color = new Color(1f, 1f, 1f, 0.2f);
         }
-        targetX = column;
-        targetY = row;
+        targetX = column + (-4);
+        targetY = row + 2;
         if (Mathf.Abs(targetX - transform.position.x) > .1)
         {
             //Move Towards the target
