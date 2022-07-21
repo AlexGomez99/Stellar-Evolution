@@ -120,10 +120,17 @@ public class Board : MonoBehaviour
 
 
             }
-            Debug.Log(basePieceValue);
           //  findMatches.currentMatches.Remove(allDots[column, row]);
             Destroy(allDots[column, row]);
-            
+            if (count == 4)
+            {
+                Vector2 tempPosition = new Vector2(column, row + offSet);
+                GameObject piece = Instantiate(dots[1], tempPosition, Quaternion.identity);
+                allDots[column, row] = piece;
+                piece.GetComponent<Dot>().row = row;
+                piece.GetComponent<Dot>().column = column;
+            }
+
 
 
             //Debug.Log(count);
@@ -152,7 +159,7 @@ public class Board : MonoBehaviour
                 if(allDots[i, j] != null)
                 {
                     DestroyMatchesAt(i, j);
-                    
+
                 }
             }
         }
@@ -185,6 +192,7 @@ public class Board : MonoBehaviour
         }
         yield return new WaitForSeconds(.4f);
         StartCoroutine(FillBoardCo());
+        findMatches.FindAllMatches();
     }
 
     private void RefillBoard()
@@ -353,7 +361,7 @@ public class Board : MonoBehaviour
             dotNum = Random.Range(0, 100);
             if(dotNum < 5)
             {
-                return 0;
+                return 1;
             }
             else
             {
