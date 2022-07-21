@@ -14,6 +14,10 @@ public class Board : MonoBehaviour
     public int width;
     public int height;
     public int offSet;
+    public float dotSize;
+    public float dotZPos = -.5f;
+    
+
     public GameObject tilePrefab;
     public GameObject[] dots;
     private BackgroundTile[,] allTiles;
@@ -67,6 +71,7 @@ public class Board : MonoBehaviour
                 dot.GetComponent<Dot>().column = i;
                 //dot.transform.parent = this.transform;
                 dot.name = "( " + i + ", " + j + " )";
+                //dot.transform.localScale = dot.transform.localScale / dotSize;
                 allDots[i, j] = dot;
             }
         }
@@ -256,6 +261,10 @@ public class Board : MonoBehaviour
         {
             Debug.Log("Deadlocked!!!");
         }
+        else
+        {
+            Debug.Log("the game continues");
+        }
         currentState = GameState.move;
         streakValue = 1;
     }
@@ -350,8 +359,8 @@ public class Board : MonoBehaviour
     private int DotToChoose()
     {
         int dotNum = 0;
-        dotNum = Random.Range(0, 100);
-        if(dotNum == 0)
+        dotNum = Random.Range(0, 2);
+        if(dotNum < 20)
         {
             return 0;
         }

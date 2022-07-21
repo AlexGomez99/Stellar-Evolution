@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 135944314311761992}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.18, y: 1.47, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 3.5, y: 3.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -96,7 +96,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -120,6 +120,9 @@ MonoBehaviour:
   previousRow: 0
   targetX: 0
   targetY: 0
+  x_offfset: -4
+  y_offfset: 2
   isMatched: 0
   swipeAngle: 0
   swipeResist: 1
+  dotZpos: -0.5
