@@ -263,7 +263,7 @@ public class Board : MonoBehaviour
         }
         else
         {
-            Debug.Log("the game continues");
+            Debug.Log("the game continues");  
         }
         currentState = GameState.move;
         streakValue = 1;
@@ -359,8 +359,8 @@ public class Board : MonoBehaviour
     private int DotToChoose()
     {
         int dotNum = 0;
-        dotNum = Random.Range(0, 2);
-        if(dotNum < 20)
+        dotNum = Random.Range(0, 100);
+        if(dotNum < 1)
         {
             return 0;
         }
