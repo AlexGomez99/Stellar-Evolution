@@ -293,7 +293,7 @@ public class Board : MonoBehaviour
                         //Check if the dots to the right and two to the right exist
                         if (allDots[i + 1, j] != null && allDots[i + 2, j] != null)
                         {
-                            if (allDots[i + 1, j].tag == allDots[i, j].tag && allDots[i + 2, j].tag == allDots[i, j].tag)
+                            if (allDots[i + 1, j].tag == allDots[i, j].tag && allDots[i + 2, j].tag == allDots[i, j].tag && allDots[i,j].tag != "Dust Clump")
                             {
                                 return true;
                             }
@@ -304,7 +304,7 @@ public class Board : MonoBehaviour
                         //Check if the dots above exist
                         if (allDots[i, j + 1] != null && allDots[i, j + 2] != null)
                         {
-                            if (allDots[i, j + 1].tag == allDots[i, j].tag && allDots[i, j + 2].tag == allDots[i, j].tag)
+                            if (allDots[i, j + 1].tag == allDots[i, j].tag && allDots[i, j + 2].tag == allDots[i, j].tag && allDots[i, j].tag != "Dust Clump")
                             {
                                 return true;
                             }
