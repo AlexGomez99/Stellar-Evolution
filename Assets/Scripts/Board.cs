@@ -127,8 +127,19 @@ public class Board : MonoBehaviour
             }
           //  findMatches.currentMatches.Remove(allDots[column, row]);
             Destroy(allDots[column, row]);
-            if (count == 4)
+            
+            if(count == 4 && allDots[column, row].tag == "Special Helium")
             {
+                Vector2 tempPosition = new Vector2(column, row + offSet);
+                GameObject piece = Instantiate(dots[0], tempPosition, Quaternion.identity);
+                allDots[column, row] = piece;
+                piece.GetComponent<Dot>().row = row;
+                piece.GetComponent<Dot>().column = column;
+            }
+            
+            else if (count == 4 )
+            {
+                
                 Vector2 tempPosition = new Vector2(column, row + offSet);
                 GameObject piece = Instantiate(dots[1], tempPosition, Quaternion.identity);
                 allDots[column, row] = piece;
@@ -141,7 +152,7 @@ public class Board : MonoBehaviour
             //Debug.Log(count);
 
 
-
+            streakValue = count;
             scoreManager.IncreaseScore(basePieceValue * streakValue);
             basePieceValue = 5;
            
