@@ -7,7 +7,7 @@ public class ScoreManager : MonoBehaviour
 {
     public Text scoreText;
     public Text highscoreText;
-    public int score;
+    public float score;
 
 
     
@@ -19,7 +19,7 @@ public class ScoreManager : MonoBehaviour
         
     }
 
-    public void IncreaseScore(int amountToIncrease)
+    public void IncreaseScore(float amountToIncrease)
     {
         //Debug.Log(amountToIncrease);
         score += amountToIncrease;
