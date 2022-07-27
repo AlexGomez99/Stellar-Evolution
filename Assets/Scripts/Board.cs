@@ -16,6 +16,7 @@ public class Board : MonoBehaviour
     public int offSet;
     public float dotSize;
     public float dotZPos = -.5f;
+    public float totalScore = 0.0f;
     
 
     public GameObject tilePrefab;
@@ -23,10 +24,10 @@ public class Board : MonoBehaviour
     private BackgroundTile[,] allTiles;
     public GameObject[,] allDots;
     private FindMatches findMatches;
-    public int basePieceValue;
-    private int streakValue = 1;
+    public float basePieceValue;
+    private float streakValue = 1.0f;
     private ScoreManager scoreManager;
-    private bool specialSpawn = false;
+    //private bool specialSpawn = false;
 
     public int count = 0;
     
@@ -118,6 +119,27 @@ public class Board : MonoBehaviour
         if (allDots[column, row].GetComponent<Dot>().isMatched)
         {
             count++;
+            
+            //  findMatches.currentMatches.Remove(allDots[column, row]);
+            Destroy(allDots[column, row]);
+            
+            
+
+
+
+            //Debug.Log(count);
+
+
+            
+            if(count == 4)
+            {
+                streakValue = 1.25f;
+            }
+            if (count == 5)
+            {
+                streakValue = 2.0f;
+            }
+            basePieceValue = 5;
             if (allDots[column, row].tag == "Special Helium")
             {
                 //Debug.Log("Special Helium");
@@ -125,10 +147,8 @@ public class Board : MonoBehaviour
 
 
             }
-          //  findMatches.currentMatches.Remove(allDots[column, row]);
-            Destroy(allDots[column, row]);
-            
-            if(count == 4 && allDots[column, row].tag == "Special Helium")
+
+            if (count == 4 && allDots[column, row].tag == "Special Helium")
             {
                 Vector2 tempPosition = new Vector2(column, row + offSet);
                 GameObject piece = Instantiate(dots[0], tempPosition, Quaternion.identity);
@@ -136,10 +156,10 @@ public class Board : MonoBehaviour
                 piece.GetComponent<Dot>().row = row;
                 piece.GetComponent<Dot>().column = column;
             }
-            
-            else if (count == 4 )
+
+            else if (count == 4)
             {
-                
+
                 Vector2 tempPosition = new Vector2(column, row + offSet);
                 GameObject piece = Instantiate(dots[1], tempPosition, Quaternion.identity);
                 allDots[column, row] = piece;
@@ -147,18 +167,9 @@ public class Board : MonoBehaviour
                 piece.GetComponent<Dot>().column = column;
             }
 
-
-
-            //Debug.Log(count);
-
-
-            streakValue = count;
-            scoreManager.IncreaseScore(basePieceValue * streakValue);
-            basePieceValue = 5;
-           
-
-
-           if(count < 4)
+            
+            totalScore += basePieceValue;
+            if (count < 4)
             {
                 allDots[column, row] = null;
             } 
@@ -174,6 +185,8 @@ public class Board : MonoBehaviour
             {
                 if(allDots[i, j] != null)
                 {
+                    
+                    
                     DestroyMatchesAt(i, j);
 
                 }
@@ -181,11 +194,16 @@ public class Board : MonoBehaviour
         }
         // Debug.Log(count);
 
+        /*Debug.Log(totalScore);
+        Debug.Log(streakValue);
+        Debug.Log(totalScore * streakValue);
+        scoreManager.IncreaseScore(totalScore * streakValue);
+        
+        totalScore = 0.0f;
+        streakValue = 0;*/
+        StartCoroutine(DecreaseRowCo());
 
-        //Debug.Log(count);
-         StartCoroutine(DecreaseRowCo());
-
-
+        
     }
 
     private IEnumerator DecreaseRowCo()
@@ -274,7 +292,7 @@ public class Board : MonoBehaviour
         }
         else
         {
-            Debug.Log("the game continues");  
+            //Debug.Log("the game continues");  
         }
         currentState = GameState.move;
         streakValue = 1;
@@ -371,7 +389,7 @@ public class Board : MonoBehaviour
     {
         int dotNum = 0;
         dotNum = Random.Range(0, 100);
-        if(dotNum < 1)
+        if(dotNum < 2)
         {
             return 0;
         }
