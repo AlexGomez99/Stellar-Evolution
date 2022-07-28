@@ -405,7 +405,7 @@ public class Board : MonoBehaviour
     private int DotToChoose()
     {
         int dotNum = 0;
-        dotNum = Random.Range(0, 100);
+        dotNum = Random.Range(0, 40);
         if(dotNum < 2)
         {
             return 0;

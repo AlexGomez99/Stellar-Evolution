@@ -37,7 +37,10 @@ public class FindMatches : MonoBehaviour
                 GameObject currentDot = board.allDots[i, j];
                 //Debug.Log(i + "  " + j + " :"+currentDot.tag) ;
 
+                if(currentDot.tag == "Dust Clump")
+                {
 
+                }else
                 if (currentDot != null)
                 {
                     //checks for h matches
