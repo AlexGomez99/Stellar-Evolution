@@ -11,6 +11,8 @@ public class FindMatches : MonoBehaviour
     public List<GameObject> currentMatches = new List<GameObject>();
     bool alreadyMatched1 = false;
     bool alreadyMatched = false;
+    public bool wasLargeHMatch;
+    public bool wasLargeVMatch;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +47,7 @@ public class FindMatches : MonoBehaviour
 
                         if (rightDot != null && leftDot != null)
                         {
-                            
+
                             if (i > 1 && i < board.width - 2)
                             {
                                 GameObject rightDotTwo = board.allDots[i + 2, j];
@@ -60,10 +62,11 @@ public class FindMatches : MonoBehaviour
                                     alreadyMatched1 = true;
                                     Debug.Log("we got a 5 match horz");
                                     Debug.Log(i + "  " + j);
+                                    wasLargeHMatch = true;
                                 }
 
 
-                                else if ( rightDot.tag == currentDot.tag && leftDot.tag == currentDot.tag && rightDotTwo.tag == currentDot.tag && alreadyMatched1 == false)
+                                else if (rightDot.tag == currentDot.tag && leftDot.tag == currentDot.tag && rightDotTwo.tag == currentDot.tag && alreadyMatched1 == false)
                                 {
 
                                     rightDot.GetComponent<Dot>().isMatched = true;
@@ -73,6 +76,8 @@ public class FindMatches : MonoBehaviour
                                     alreadyMatched1 = true;
                                     Debug.Log("we got a 4-1 match horz");
                                     Debug.Log(i + "  " + j);
+                                    wasLargeHMatch = true;
+
 
                                 }
                                 else if (rightDot.tag == currentDot.tag && leftDot.tag == currentDot.tag && leftDotTwo.tag == currentDot.tag && alreadyMatched1 == false)
@@ -84,76 +89,89 @@ public class FindMatches : MonoBehaviour
                                     alreadyMatched1 = true;
                                     Debug.Log("we got a 4-2 match horz");
                                     Debug.Log(i + "  " + j);
+                                    wasLargeHMatch = true;
+
 
                                 }
 
+                                
+                                
+                                alreadyMatched1 = false;
                             }
 
-                            if (rightDot.tag == currentDot.tag && leftDot.tag == currentDot.tag && alreadyMatched1 == false)
+                            if (!wasLargeHMatch)
                             {
-                                rightDot.GetComponent<Dot>().isMatched = true;
-                                leftDot.GetComponent<Dot>().isMatched = true;
-                                currentDot.GetComponent<Dot>().isMatched = true;
-                                Debug.Log("we got a 3 match horz");
-                                Debug.Log(i + "  " + j);
+                                if (rightDot.tag == currentDot.tag && leftDot.tag == currentDot.tag && alreadyMatched1 == false)
+                                {
+                                    rightDot.GetComponent<Dot>().isMatched = true;
+                                    leftDot.GetComponent<Dot>().isMatched = true;
+                                    currentDot.GetComponent<Dot>().isMatched = true;
+                                    alreadyMatched1 = true;
 
-
-
+                                    Debug.Log("we got a 3 match horz");
+                                    Debug.Log(i + "  " + j);
+                                }
                             }
-                            alreadyMatched1 = false;
+                            wasLargeHMatch = false;
                         }
                     }
-                        //checks for v matches
-                        if (j > 0 && j < board.height - 1)
-                        {
-                            GameObject upDot = board.allDots[i, j + 1];
-                            GameObject downDot = board.allDots[i, j - 1];
+                    //checks for v matches
+                    if (j > 0 && j < board.height - 1)
+                    {
+                        GameObject upDot = board.allDots[i, j + 1];
+                        GameObject downDot = board.allDots[i, j - 1];
                             
-                            if (upDot != null && downDot != null)
-                            {
+                        if (upDot != null && downDot != null)
+                        {
                                 
-                                if (j > 1 && j < board.height - 2)
+                            if (j > 1 && j < board.height - 2)
+                            {
+                                GameObject upDotTwo = board.allDots[i, j + 2];
+                                GameObject downDotTwo = board.allDots[i, j - 2];
+                                if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag && upDotTwo.tag == currentDot.tag && downDotTwo.tag == currentDot.tag)
                                 {
-                                    GameObject upDotTwo = board.allDots[i, j + 2];
-                                    GameObject downDotTwo = board.allDots[i, j - 2];
-                                    if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag && upDotTwo.tag == currentDot.tag && downDotTwo.tag == currentDot.tag)
-                                    {
-                                        upDot.GetComponent<Dot>().isMatched = true;
-                                        upDotTwo.GetComponent<Dot>().isMatched = true;
-                                        downDot.GetComponent<Dot>().isMatched = true;
-                                        downDotTwo.GetComponent<Dot>().isMatched = true;
-                                        currentDot.GetComponent<Dot>().isMatched = true;
-                                        alreadyMatched = true;
-                                        Debug.Log("we got a 5 match vert");
+                                    upDot.GetComponent<Dot>().isMatched = true;
+                                    upDotTwo.GetComponent<Dot>().isMatched = true;
+                                    downDot.GetComponent<Dot>().isMatched = true;
+                                    downDotTwo.GetComponent<Dot>().isMatched = true;
+                                    currentDot.GetComponent<Dot>().isMatched = true;
+                                    alreadyMatched = true;
+                                    Debug.Log("we got a 5 match vert");
                                     Debug.Log(i + "  " + j);
+                                    wasLargeVMatch = true;
+
                                 }
+                                else if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag && upDotTwo.tag == currentDot.tag && alreadyMatched == false)
+                                {
 
-
-                                    else if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag && upDotTwo.tag == currentDot.tag && alreadyMatched == false)
-                                    {
-
-                                        upDot.GetComponent<Dot>().isMatched = true;
-                                        upDotTwo.GetComponent<Dot>().isMatched = true;
-                                        downDot.GetComponent<Dot>().isMatched = true;
-                                        currentDot.GetComponent<Dot>().isMatched = true;
-                                        alreadyMatched = true;
-                                        Debug.Log("we got a 4-1 match vert");
+                                    upDot.GetComponent<Dot>().isMatched = true;
+                                    upDotTwo.GetComponent<Dot>().isMatched = true;
+                                    downDot.GetComponent<Dot>().isMatched = true;
+                                    currentDot.GetComponent<Dot>().isMatched = true;
+                                    alreadyMatched = true;
+                                    Debug.Log("we got a 4-1 match vert");
                                     Debug.Log(i + "  " + j);
+                                    wasLargeVMatch = true;
+
                                 }
-                                    else if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag && downDotTwo.tag == currentDot.tag && alreadyMatched == false)
-                                    {
-                                        upDot.GetComponent<Dot>().isMatched = true;
-                                        downDot.GetComponent<Dot>().isMatched = true;
-                                        downDotTwo.GetComponent<Dot>().isMatched = true;
-                                        currentDot.GetComponent<Dot>().isMatched = true;
-                                        alreadyMatched = true;
-                                        Debug.Log("we got a 4-2 match vert");
+                                else if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag && downDotTwo.tag == currentDot.tag && alreadyMatched == false)
+                                {
+                                    upDot.GetComponent<Dot>().isMatched = true;
+                                    downDot.GetComponent<Dot>().isMatched = true;
+                                    downDotTwo.GetComponent<Dot>().isMatched = true;
+                                    currentDot.GetComponent<Dot>().isMatched = true;
+                                    alreadyMatched = true;
+                                    Debug.Log("we got a 4-2 match vert");
                                     Debug.Log(i + "  " + j);
+                                    wasLargeVMatch = true;
+
 
                                 }
+                                alreadyMatched = false;
 
-                                }
-
+                            }
+                            if (!wasLargeVMatch)
+                            {
                                 if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag && alreadyMatched == false)
                                 {
                                     upDot.GetComponent<Dot>().isMatched = true;
@@ -163,15 +181,16 @@ public class FindMatches : MonoBehaviour
 
 
                                 }
-                            alreadyMatched = false;
-
+                            }
+                            wasLargeVMatch = false;
 
 
                         }
-                        }
+                    }
                     }
                 }
             }
+        Debug.Log("this is the end of find matches");
         }
     }
 
