@@ -18,6 +18,7 @@ public class Dot : MonoBehaviour
     public bool isMatched = false;
 
     private HintManager hintManager;
+    private PowerUpManager powerUpManager;
     private FindMatches findMatches;
     private Board board;
     private GameObject otherDot;
@@ -36,6 +37,7 @@ public class Dot : MonoBehaviour
     {
         hintManager = FindObjectOfType<HintManager>();
         board = FindObjectOfType<Board>();
+        powerUpManager = FindObjectOfType<PowerUpManager>();
         findMatches = FindObjectOfType<FindMatches>();
         //targetX = (int)transform.position.x;
         //targetY = (int)transform.position.y;
@@ -72,7 +74,6 @@ public class Dot : MonoBehaviour
             }
             
             //findMatches.FindAllMatches();
-
 
         }
         else
@@ -127,12 +128,15 @@ public class Dot : MonoBehaviour
 
     private void OnMouseDown()
     {
-       // Debug.Log("CLICK DOWN "+ this.gameObject);
+        // Debug.Log("CLICK DOWN "+ this.gameObject);
         /*//Destroy the hint
         if (hintManager != null)
         {
             hintManager.DestroyHint();
         }*/
+        if (powerUpManager.GetComponent<PowerUpManager>().PU1) // check for all power ups here but do nothing!
+        {}
+        else
         if (board.currentState == GameState.move)
         {
             firstTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -145,6 +149,10 @@ public class Dot : MonoBehaviour
     private void OnMouseUp()
     {
         //Debug.Log("check 2");
+        if (powerUpManager.GetComponent<PowerUpManager>().PU1) // check for all power ups here but do nothing!
+        {
+            powerUpManager.PU1Execute(row);
+        }else
         if (board.currentState == GameState.move)
         {
             //Debug.Log("check 1");

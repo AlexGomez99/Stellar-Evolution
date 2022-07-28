@@ -27,14 +27,16 @@ public class Board : MonoBehaviour
     public float basePieceValue;
     private float streakValue = 1.0f;
     private ScoreManager scoreManager;
+    private PowerUpManager powerUpManager;
     //private bool specialSpawn = false;
 
     public int count = 0;
+    public int PUcount = 0;
     
     // Start is called before the first frame update
     void Start()
     {
-
+        powerUpManager = FindObjectOfType<PowerUpManager>();
         scoreManager = FindObjectOfType<ScoreManager>();
         findMatches = FindObjectOfType<FindMatches>();
         allTiles = new BackgroundTile[width, height];
@@ -115,10 +117,20 @@ public class Board : MonoBehaviour
     //this is the function destroys game objects in which they are matched
     private void DestroyMatchesAt(int column, int row)
     {
-       // Vector2 tempPosition = new Vector2(column, row + offSet);
+        int scoreIncreaseAmt = 0;
+
+        // Vector2 tempPosition = new Vector2(column, row + offSet);
+
         if (allDots[column, row].GetComponent<Dot>().isMatched)
         {
-            count++;
+            if (!powerUpManager.PU1)
+            {
+                count++;
+            }
+            else
+            {
+                PUcount++;
+            }
             
             //  findMatches.currentMatches.Remove(allDots[column, row]);
             Destroy(allDots[column, row]);
@@ -129,7 +141,7 @@ public class Board : MonoBehaviour
 
             //Debug.Log(count);
 
-
+           
             
             if(count == 4)
             {
@@ -172,7 +184,8 @@ public class Board : MonoBehaviour
             if (count < 4)
             {
                 allDots[column, row] = null;
-            } 
+            }
+            scoreManager.IncreaseScore(basePieceValue * streakValue);
             
         }
     }
@@ -202,7 +215,11 @@ public class Board : MonoBehaviour
         totalScore = 0.0f;
         streakValue = 0;*/
         StartCoroutine(DecreaseRowCo());
-
+        if(PUcount == 7)
+        {
+            powerUpManager.PU1 = false;
+            PUcount = 0;
+        }
         
     }
 

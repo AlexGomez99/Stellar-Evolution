@@ -23,7 +23,7 @@ public class ScoreManager : MonoBehaviour
     {
         //Debug.Log(amountToIncrease);
         score += amountToIncrease;
-        scoreText.text = "" + score;
+        scoreText.text = "" + (int)score;
 
     }
 }
