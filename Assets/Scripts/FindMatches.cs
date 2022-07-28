@@ -8,6 +8,7 @@ using UnityEngine;
 public class FindMatches : MonoBehaviour
 {
     private Board board;
+    private AudioManager AM;
     public List<GameObject> currentMatches = new List<GameObject>();
     bool alreadyMatched1 = false;
     bool alreadyMatched = false;
@@ -16,6 +17,7 @@ public class FindMatches : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AM = FindObjectOfType<AudioManager>();
         board = FindObjectOfType<Board>();
     }
 
@@ -63,6 +65,7 @@ public class FindMatches : MonoBehaviour
                                     Debug.Log("we got a 5 match horz");
                                     Debug.Log(i + "  " + j);
                                     wasLargeHMatch = true;
+                                    AM.matchSound.Play();
                                 }
 
 
@@ -77,7 +80,7 @@ public class FindMatches : MonoBehaviour
                                     Debug.Log("we got a 4-1 match horz");
                                     Debug.Log(i + "  " + j);
                                     wasLargeHMatch = true;
-
+                                    AM.matchSound.Play();
 
                                 }
                                 else if (rightDot.tag == currentDot.tag && leftDot.tag == currentDot.tag && leftDotTwo.tag == currentDot.tag && alreadyMatched1 == false)
@@ -90,7 +93,7 @@ public class FindMatches : MonoBehaviour
                                     Debug.Log("we got a 4-2 match horz");
                                     Debug.Log(i + "  " + j);
                                     wasLargeHMatch = true;
-
+                                    AM.matchSound.Play();
 
                                 }
 
@@ -110,6 +113,7 @@ public class FindMatches : MonoBehaviour
 
                                     Debug.Log("we got a 3 match horz");
                                     Debug.Log(i + "  " + j);
+                                    AM.matchSound.Play();
                                 }
                             }
                             wasLargeHMatch = false;
@@ -139,6 +143,7 @@ public class FindMatches : MonoBehaviour
                                     Debug.Log("we got a 5 match vert");
                                     Debug.Log(i + "  " + j);
                                     wasLargeVMatch = true;
+                                    AM.matchSound.Play();
 
                                 }
                                 else if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag && upDotTwo.tag == currentDot.tag && alreadyMatched == false)
@@ -152,6 +157,7 @@ public class FindMatches : MonoBehaviour
                                     Debug.Log("we got a 4-1 match vert");
                                     Debug.Log(i + "  " + j);
                                     wasLargeVMatch = true;
+                                    AM.matchSound.Play();
 
                                 }
                                 else if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag && downDotTwo.tag == currentDot.tag && alreadyMatched == false)
@@ -164,7 +170,7 @@ public class FindMatches : MonoBehaviour
                                     Debug.Log("we got a 4-2 match vert");
                                     Debug.Log(i + "  " + j);
                                     wasLargeVMatch = true;
-
+                                    AM.matchSound.Play();
 
                                 }
                                 alreadyMatched = false;
@@ -178,7 +184,7 @@ public class FindMatches : MonoBehaviour
                                     downDot.GetComponent<Dot>().isMatched = true;
                                     currentDot.GetComponent<Dot>().isMatched = true;
                                     Debug.Log("we got a 3 match vert");
-
+                                    AM.matchSound.Play();
 
                                 }
                             }

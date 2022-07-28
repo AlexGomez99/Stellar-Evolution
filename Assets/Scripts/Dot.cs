@@ -158,8 +158,9 @@ public class Dot : MonoBehaviour
             //Debug.Log("check 1");
             finalTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             CalculateAngle();
+            findMatches.FindAllMatches();
         }
-        findMatches.FindAllMatches();
+        
     }
 
     // calulating the angel of the mouse direction   
