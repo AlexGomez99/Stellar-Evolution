@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum GameState
 {
@@ -36,6 +37,7 @@ public class Board : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         powerUpManager = FindObjectOfType<PowerUpManager>();
         scoreManager = FindObjectOfType<ScoreManager>();
         findMatches = FindObjectOfType<FindMatches>();
@@ -117,7 +119,7 @@ public class Board : MonoBehaviour
     //this is the function destroys game objects in which they are matched
     private void DestroyMatchesAt(int column, int row)
     {
-        int scoreIncreaseAmt = 0;
+       
 
         // Vector2 tempPosition = new Vector2(column, row + offSet);
 
@@ -306,6 +308,19 @@ public class Board : MonoBehaviour
         if (IsDeadlocked())
         {
             Debug.Log("Deadlocked!!!");
+            if (SceneManager.GetActiveScene().name == "Level 1")
+            {
+                SceneManager.LoadScene(sceneName: "level 2");
+            }
+            else if (SceneManager.GetActiveScene().name == "Level 2")
+            {
+                SceneManager.LoadScene(sceneName: "level 3");
+            }
+            else if (SceneManager.GetActiveScene().name == "Level 3")
+            {
+                Application.Quit();
+            }
+
         }
         else
         {

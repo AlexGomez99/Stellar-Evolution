@@ -50,7 +50,7 @@ public class FindMatches : MonoBehaviour
                         GameObject rightDot = board.allDots[i + 1, j];
                         GameObject leftDot = board.allDots[i - 1, j];
 
-                        if (rightDot != null && leftDot != null)
+                        if (rightDot != null && leftDot != null && currentDot.GetComponent<Dot>().isMatched != true)
                         {
 
                             if (i > 1 && i < board.width - 2)
@@ -66,7 +66,7 @@ public class FindMatches : MonoBehaviour
                                     currentDot.GetComponent<Dot>().isMatched = true;
                                     alreadyMatched1 = true;
                                     Debug.Log("we got a 5 match horz");
-                                    Debug.Log(i + "  " + j);
+                                    
                                     wasLargeHMatch = true;
                                     AM.matchSound.Play();
                                 }
@@ -81,7 +81,7 @@ public class FindMatches : MonoBehaviour
                                     currentDot.GetComponent<Dot>().isMatched = true;
                                     alreadyMatched1 = true;
                                     Debug.Log("we got a 4-1 match horz");
-                                    Debug.Log(i + "  " + j);
+                                    
                                     wasLargeHMatch = true;
                                     AM.matchSound.Play();
 
@@ -94,7 +94,7 @@ public class FindMatches : MonoBehaviour
                                     currentDot.GetComponent<Dot>().isMatched = true;
                                     alreadyMatched1 = true;
                                     Debug.Log("we got a 4-2 match horz");
-                                    Debug.Log(i + "  " + j);
+                                    
                                     wasLargeHMatch = true;
                                     AM.matchSound.Play();
 
@@ -115,7 +115,7 @@ public class FindMatches : MonoBehaviour
                                     alreadyMatched1 = true;
 
                                     Debug.Log("we got a 3 match horz");
-                                    Debug.Log(i + "  " + j);
+                                    
                                     AM.matchSound.Play();
                                 }
                             }
@@ -128,7 +128,7 @@ public class FindMatches : MonoBehaviour
                         GameObject upDot = board.allDots[i, j + 1];
                         GameObject downDot = board.allDots[i, j - 1];
                             
-                        if (upDot != null && downDot != null)
+                        if (upDot != null && downDot != null && currentDot != null)
                         {
                                 
                             if (j > 1 && j < board.height - 2)
@@ -144,7 +144,7 @@ public class FindMatches : MonoBehaviour
                                     currentDot.GetComponent<Dot>().isMatched = true;
                                     alreadyMatched = true;
                                     Debug.Log("we got a 5 match vert");
-                                    Debug.Log(i + "  " + j);
+                                    
                                     wasLargeVMatch = true;
                                     AM.matchSound.Play();
 
@@ -158,7 +158,7 @@ public class FindMatches : MonoBehaviour
                                     currentDot.GetComponent<Dot>().isMatched = true;
                                     alreadyMatched = true;
                                     Debug.Log("we got a 4-1 match vert");
-                                    Debug.Log(i + "  " + j);
+                                    
                                     wasLargeVMatch = true;
                                     AM.matchSound.Play();
 
@@ -171,7 +171,7 @@ public class FindMatches : MonoBehaviour
                                     currentDot.GetComponent<Dot>().isMatched = true;
                                     alreadyMatched = true;
                                     Debug.Log("we got a 4-2 match vert");
-                                    Debug.Log(i + "  " + j);
+                                    
                                     wasLargeVMatch = true;
                                     AM.matchSound.Play();
 
@@ -199,7 +199,6 @@ public class FindMatches : MonoBehaviour
                     }
                 }
             }
-        Debug.Log("this is the end of find matches");
         }
     }
 
