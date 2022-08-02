@@ -57,7 +57,7 @@ public class FindMatches : MonoBehaviour
                             {
                                 GameObject rightDotTwo = board.allDots[i + 2, j];
                                 GameObject leftDotTwo = board.allDots[i - 2, j];
-                                if (rightDot.tag == currentDot.tag && leftDot.tag == currentDot.tag && rightDotTwo.tag == currentDot.tag && leftDotTwo.tag == currentDot.tag && alreadyMatched1 == false)
+                                if (rightDot.tag == currentDot.tag && leftDot.tag == currentDot.tag && rightDotTwo.tag == currentDot.tag && leftDotTwo.tag == currentDot.tag)
                                 {
                                     rightDot.GetComponent<Dot>().isMatched = true;
                                     rightDotTwo.GetComponent<Dot>().isMatched = true;

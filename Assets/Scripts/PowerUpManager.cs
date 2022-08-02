@@ -20,7 +20,12 @@ public class PowerUpManager : MonoBehaviour
     }
     public void PU1ToggleOn()
     {
-        PU1 = true;
+        if(PU1 == true){
+            PU1 = false;
+        }
+        else{
+            PU1 = true;
+        }
     }
     public void PU1Execute(int row)
     {

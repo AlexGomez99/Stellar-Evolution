@@ -38,11 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-<<<<<<< HEAD:Assets/Scenes/Level 3.unity
   m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
-=======
-  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
->>>>>>> bc0b47e5812d9ac798a431bc2c9926ef7127d861:Assets/Scenes/Demo.unity
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -162,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -620, y: 317}
+  m_AnchoredPosition: {x: -12, y: 0}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &53130653
@@ -258,12 +254,12 @@ MonoBehaviour:
   totalScore: 0
   tilePrefab: {fileID: 3045270244796084577, guid: 86d12e60a3baf2c45a48dea9084c1325, type: 3}
   dots:
-  - {fileID: 7078337626321347104, guid: 214c6a82f1eca734583a35afd9ad62e8, type: 3}
-  - {fileID: 1634066539959185894, guid: 3dfb5199e4011284687e94085e7d7a91, type: 3}
-  - {fileID: 135944314311761992, guid: 8100429b1bb43a14dab1cf4e7c1ade75, type: 3}
-  - {fileID: 582571981393890206, guid: e866bd5140b4af941a2d91cbb0a906f2, type: 3}
-  - {fileID: 2113660572391970442, guid: de1ffd293d1b97a4884cb97976b6dd16, type: 3}
-  - {fileID: 5886796804173833587, guid: 7a313fffe70189549baa49f9e9b56d81, type: 3}
+  - {fileID: 7078337626321347104, guid: 6f5288218c52e864683b5d1efe971174, type: 3}
+  - {fileID: 1634066539959185894, guid: 2f4d4f588c4bef94f9b4692f0c2c323a, type: 3}
+  - {fileID: 135944314311761992, guid: f91b40a12537da54e85de2379af27888, type: 3}
+  - {fileID: 582571981393890206, guid: 48a22739009d164459a2dbc237b01281, type: 3}
+  - {fileID: 2113660572391970442, guid: 7c199404f3c3ec14ea43dd1a2a604391, type: 3}
+  - {fileID: 5886796804173833587, guid: 66fb51e884120f146abc79464319dc9a, type: 3}
   basePieceValue: 5
   count: 0
   PUcount: 0
@@ -1647,7 +1643,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 450, y: 10}
+  m_AnchoredPosition: {x: 633, y: -158}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &900748967
@@ -2309,8 +2305,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037194998}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.3132758, y: 4.268643, z: 3.7228467}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.3132763, y: 4.268643, z: 3.7228467}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3031,11 +3027,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-<<<<<<< HEAD:Assets/Scenes/Level 3.unity
-  m_AnchoredPosition: {x: 955, y: -166}
-=======
   m_AnchoredPosition: {x: 1458, y: -553}
->>>>>>> bc0b47e5812d9ac798a431bc2c9926ef7127d861:Assets/Scenes/Demo.unity
   m_SizeDelta: {x: 216.54004, y: 77.57001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1446561919
@@ -3316,7 +3308,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -319, y: 157}
+  m_AnchoredPosition: {x: -864, y: 440}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1612355978
