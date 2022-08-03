@@ -41,7 +41,7 @@ public class FindMatches : MonoBehaviour
                 {
 
                 }else
-                if (currentDot != null)
+                if (currentDot != null && currentDot.GetComponent<Dot>().isMatched != true)
                 {
                     //checks for h matches
                     if (i > 0 && i < board.width - 1)
@@ -70,65 +70,119 @@ public class FindMatches : MonoBehaviour
                                     wasLargeHMatch = true;
                                     AM.matchSound.Play();
                                 }
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
+        for (int i = 0; i < board.width; i++)
+        {
+            for (int j = 0; j < board.height; j++)
+            {
 
-                                else if (rightDot.tag == currentDot.tag && leftDot.tag == currentDot.tag && rightDotTwo.tag == currentDot.tag && alreadyMatched1 == false)
+                GameObject currentDot = board.allDots[i, j];
+                //Debug.Log(i + "  " + j + " :"+currentDot.tag) ;
+
+                if(currentDot.tag == "Dust Clump")
+                {
+
+                }else{
+                    if (currentDot != null && currentDot.GetComponent<Dot>().isMatched != true) 
+                {
+                    //checks for h matches
+                    if (i > 0 && i < board.width - 1)
+                    {
+                       
+                        GameObject rightDot = board.allDots[i + 1, j];
+                        GameObject leftDot = board.allDots[i - 1, j];
+
+                        if (rightDot != null && leftDot != null && currentDot.GetComponent<Dot>().isMatched != true)
+                        {
+
+                            if (i > 0 && i < board.width - 2)
+                            {
+                                GameObject rightDotTwo = board.allDots[i + 2, j];
+                                if (rightDot.tag == currentDot.tag && leftDot.tag == currentDot.tag && rightDotTwo.tag == currentDot.tag)
                                 {
-
                                     rightDot.GetComponent<Dot>().isMatched = true;
                                     rightDotTwo.GetComponent<Dot>().isMatched = true;
                                     leftDot.GetComponent<Dot>().isMatched = true;
                                     currentDot.GetComponent<Dot>().isMatched = true;
                                     alreadyMatched1 = true;
-                                    Debug.Log("we got a 4-1 match horz");
+                                    Debug.Log("we got a 4 match horz");
                                     
                                     wasLargeHMatch = true;
                                     AM.matchSound.Play();
-
-                                }
-                                else if (rightDot.tag == currentDot.tag && leftDot.tag == currentDot.tag && leftDotTwo.tag == currentDot.tag && alreadyMatched1 == false)
-                                {
-                                    rightDot.GetComponent<Dot>().isMatched = true;
-                                    leftDot.GetComponent<Dot>().isMatched = true;
-                                    leftDotTwo.GetComponent<Dot>().isMatched = true;
-                                    currentDot.GetComponent<Dot>().isMatched = true;
-                                    alreadyMatched1 = true;
-                                    Debug.Log("we got a 4-2 match horz");
-                                    
-                                    wasLargeHMatch = true;
-                                    AM.matchSound.Play();
-
-                                }
-
-                                
-                                
-                                alreadyMatched1 = false;
-                            }
-
-                            if (!wasLargeHMatch)
-                            {
-                                if (rightDot.tag == currentDot.tag && leftDot.tag == currentDot.tag && alreadyMatched1 == false)
-                                {
-                                    rightDot.GetComponent<Dot>().isMatched = true;
-                                    leftDot.GetComponent<Dot>().isMatched = true;
-                                    currentDot.GetComponent<Dot>().isMatched = true;
-                                    alreadyMatched1 = true;
-
-                                    Debug.Log("we got a 3 match horz");
-                                    
-                                    AM.matchSound.Play();
                                 }
                             }
-                            wasLargeHMatch = false;
                         }
                     }
+                }
+                }
+                
+            }
+        }
+        for (int i = 0; i < board.width; i++)
+        {
+            for (int j = 0; j < board.height; j++)
+            {
+
+                GameObject currentDot = board.allDots[i, j];
+                //Debug.Log(i + "  " + j + " :"+currentDot.tag) ;
+
+                if(currentDot.tag == "Dust Clump")
+                {
+
+                }else{
+                    if (currentDot != null && currentDot.GetComponent<Dot>().isMatched != true)
+                {
+                    if (i > 0 && i < board.width - 1)
+                    {
+                       
+                        GameObject rightDot = board.allDots[i + 1, j];
+                        GameObject leftDot = board.allDots[i - 1, j];
+
+                        if (rightDot != null && leftDot != null )
+                        {
+
+                            
+                                
+                                if (rightDot.tag == currentDot.tag && leftDot.tag == currentDot.tag)
+                                {
+                                    rightDot.GetComponent<Dot>().isMatched = true;
+                                    leftDot.GetComponent<Dot>().isMatched = true;
+                                    currentDot.GetComponent<Dot>().isMatched = true;
+                                    Debug.Log("we got a 3 match horz");
+                                    AM.matchSound.Play();
+                                }
+                            
+                        }
+                    }
+                }
+                }
+                
+            }
+        }
+
+
+                               
                     //checks for v matches
+                    for (int i = 0; i < board.width; i++)
+        {
+            for (int j = 0; j < board.height; j++)
+            {
+                GameObject currentDot = board.allDots[i, j];
+                if (currentDot != null && currentDot.GetComponent<Dot>().isMatched != true)
+                {
                     if (j > 0 && j < board.height - 1)
                     {
+                        
                         GameObject upDot = board.allDots[i, j + 1];
                         GameObject downDot = board.allDots[i, j - 1];
                             
-                        if (upDot != null && downDot != null && currentDot != null)
+                        if (upDot != null && downDot != null  && currentDot.GetComponent<Dot>().isMatched != true)
                         {
                                 
                             if (j > 1 && j < board.height - 2)
@@ -148,57 +202,91 @@ public class FindMatches : MonoBehaviour
                                     wasLargeVMatch = true;
                                     AM.matchSound.Play();
 
-                                }
-                                else if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag && upDotTwo.tag == currentDot.tag && alreadyMatched == false)
-                                {
+                                            }
 
+                                            }
+                                            }
+                                            }
+                                            }
+                                            }
+        }
+
+        for (int i = 0; i < board.width; i++)
+        {
+            for (int j = 0; j < board.height; j++)
+            {
+                GameObject currentDot = board.allDots[i, j];
+                if (currentDot != null && currentDot.GetComponent<Dot>().isMatched != true)
+                {
+                    if (j > 0 && j < board.height - 1)
+                    {
+                        
+                        GameObject upDot = board.allDots[i, j + 1];
+                        GameObject downDot = board.allDots[i, j - 1];
+                            
+                        if (upDot != null && downDot != null && currentDot.GetComponent<Dot>().isMatched != true)
+                        {
+                                
+                            if (j > 0 && j < board.height - 2)
+                            {
+                                GameObject upDotTwo = board.allDots[i, j + 2];
+                                
+                                if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag && upDotTwo.tag == currentDot.tag)
+                                {
                                     upDot.GetComponent<Dot>().isMatched = true;
                                     upDotTwo.GetComponent<Dot>().isMatched = true;
                                     downDot.GetComponent<Dot>().isMatched = true;
                                     currentDot.GetComponent<Dot>().isMatched = true;
                                     alreadyMatched = true;
-                                    Debug.Log("we got a 4-1 match vert");
+                                    Debug.Log("we got a 4 match vert");
                                     
                                     wasLargeVMatch = true;
                                     AM.matchSound.Play();
 
-                                }
-                                else if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag && downDotTwo.tag == currentDot.tag && alreadyMatched == false)
+                                            }
+
+                                            }
+                                            }
+                                            }
+                                            }
+                                            }
+        }
+for (int i = 0; i < board.width; i++)
+        {
+            for (int j = 0; j < board.height; j++)
+            {
+                GameObject currentDot = board.allDots[i, j];
+                if (currentDot != null && currentDot.GetComponent<Dot>().isMatched != true)
+                {
+                    if (j > 0 && j < board.height - 1)
+                    {
+                        
+                        GameObject upDot = board.allDots[i, j + 1];
+                        GameObject downDot = board.allDots[i, j - 1];
+                            
+                        if (upDot != null && downDot != null && currentDot.GetComponent<Dot>().isMatched != true)
+                        {
+                                
+                            
+                                if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag)
                                 {
                                     upDot.GetComponent<Dot>().isMatched = true;
+                                    
                                     downDot.GetComponent<Dot>().isMatched = true;
-                                    downDotTwo.GetComponent<Dot>().isMatched = true;
                                     currentDot.GetComponent<Dot>().isMatched = true;
                                     alreadyMatched = true;
-                                    Debug.Log("we got a 4-2 match vert");
+                                    Debug.Log("we got a 3 match vert");
                                     
                                     wasLargeVMatch = true;
                                     AM.matchSound.Play();
 
-                                }
-                                alreadyMatched = false;
+                                            }
 
-                            }
-                            if (!wasLargeVMatch)
-                            {
-                                if (upDot.tag == currentDot.tag && downDot.tag == currentDot.tag && alreadyMatched == false)
-                                {
-                                    upDot.GetComponent<Dot>().isMatched = true;
-                                    downDot.GetComponent<Dot>().isMatched = true;
-                                    currentDot.GetComponent<Dot>().isMatched = true;
-                                    Debug.Log("we got a 3 match vert");
-                                    AM.matchSound.Play();
-
-                                }
-                            }
-                            wasLargeVMatch = false;
-
-
-                        }
-                    }
-                    }
-                }
-            }
-        }
+                                            }
+                                            }
+                                            }
+                                            }
+                                            }
     }
+                            }
 
