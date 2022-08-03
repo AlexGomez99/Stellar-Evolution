@@ -187,7 +187,6 @@ public class Board : MonoBehaviour
             {
                 allDots[column, row] = null;
             }
-            scoreManager.IncreaseScore(basePieceValue * streakValue);
             
         }
     }

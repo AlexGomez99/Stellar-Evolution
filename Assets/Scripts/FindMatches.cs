@@ -14,9 +14,11 @@ public class FindMatches : MonoBehaviour
     bool alreadyMatched = false;
     public bool wasLargeHMatch;
     public bool wasLargeVMatch;
+    private ScoreManager scoreManager;
     // Start is called before the first frame update
     void Start()
     {
+        scoreManager = FindObjectOfType<ScoreManager>();
         AM = FindObjectOfType<AudioManager>();
         board = FindObjectOfType<Board>();
     }
@@ -66,7 +68,7 @@ public class FindMatches : MonoBehaviour
                                     currentDot.GetComponent<Dot>().isMatched = true;
                                     alreadyMatched1 = true;
                                     Debug.Log("we got a 5 match horz");
-                                    
+                                    scoreManager.IncreaseScore(50);
                                     wasLargeHMatch = true;
                                     AM.matchSound.Play();
                                 }
@@ -112,7 +114,7 @@ public class FindMatches : MonoBehaviour
                                     currentDot.GetComponent<Dot>().isMatched = true;
                                     alreadyMatched1 = true;
                                     Debug.Log("we got a 4 match horz");
-                                    
+                                    scoreManager.IncreaseScore(25);
                                     wasLargeHMatch = true;
                                     AM.matchSound.Play();
                                 }
@@ -155,7 +157,9 @@ public class FindMatches : MonoBehaviour
                                     leftDot.GetComponent<Dot>().isMatched = true;
                                     currentDot.GetComponent<Dot>().isMatched = true;
                                     Debug.Log("we got a 3 match horz");
+                                    scoreManager.IncreaseScore(15);
                                     AM.matchSound.Play();
+                                    
                                 }
                             
                         }
@@ -198,7 +202,7 @@ public class FindMatches : MonoBehaviour
                                     currentDot.GetComponent<Dot>().isMatched = true;
                                     alreadyMatched = true;
                                     Debug.Log("we got a 5 match vert");
-                                    
+                                    scoreManager.IncreaseScore(50);
                                     wasLargeVMatch = true;
                                     AM.matchSound.Play();
 
@@ -239,7 +243,7 @@ public class FindMatches : MonoBehaviour
                                     currentDot.GetComponent<Dot>().isMatched = true;
                                     alreadyMatched = true;
                                     Debug.Log("we got a 4 match vert");
-                                    
+                                    scoreManager.IncreaseScore(25);
                                     wasLargeVMatch = true;
                                     AM.matchSound.Play();
 
@@ -276,7 +280,7 @@ for (int i = 0; i < board.width; i++)
                                     currentDot.GetComponent<Dot>().isMatched = true;
                                     alreadyMatched = true;
                                     Debug.Log("we got a 3 match vert");
-                                    
+                                    scoreManager.IncreaseScore(15);
                                     wasLargeVMatch = true;
                                     AM.matchSound.Play();
 
