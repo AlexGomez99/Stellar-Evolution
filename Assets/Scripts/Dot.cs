@@ -244,7 +244,12 @@ public class Dot : MonoBehaviour
         StartCoroutine(CheckMoveCo());
     }
 
-    
+    private void OnDestroy()
+    {
+        Instantiate(Resources.Load("BlowUp"),transform.position,Quaternion.identity);
+    }
+
+
 
     /* void FindMatches()
      {
