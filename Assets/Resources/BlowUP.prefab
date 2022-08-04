@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8184953075512154567}
   - component: {fileID: 8287081137890063774}
   - component: {fileID: 2291303726236499974}
+  - component: {fileID: 8819114988633319614}
   m_Layer: 0
   m_Name: BlowUP
   m_TagString: Untagged
@@ -4870,3 +4871,15 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &8819114988633319614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064554278488762154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df6576b3c513ab6499df916e6a98291d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
