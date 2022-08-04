@@ -42,7 +42,7 @@ public class FindMatches : MonoBehaviour
                 if(currentDot.tag == "Dust Clump")
                 {
 
-                }else
+                }else{
                 if (currentDot != null && currentDot.GetComponent<Dot>().isMatched != true)
                 {
                     //checks for h matches
@@ -73,6 +73,7 @@ public class FindMatches : MonoBehaviour
                                     AM.matchSound.Play();
                                 }
                             }
+                        }
                         }
                     }
                 }
@@ -178,6 +179,10 @@ public class FindMatches : MonoBehaviour
             for (int j = 0; j < board.height; j++)
             {
                 GameObject currentDot = board.allDots[i, j];
+                if(currentDot.tag == "Dust Clump")
+                {
+
+                }else{
                 if (currentDot != null && currentDot.GetComponent<Dot>().isMatched != true)
                 {
                     if (j > 0 && j < board.height - 1)
@@ -213,6 +218,7 @@ public class FindMatches : MonoBehaviour
                                             }
                                             }
                                             }
+            }
         }
 
         for (int i = 0; i < board.width; i++)
@@ -220,6 +226,10 @@ public class FindMatches : MonoBehaviour
             for (int j = 0; j < board.height; j++)
             {
                 GameObject currentDot = board.allDots[i, j];
+                if(currentDot.tag == "Dust Clump")
+                {
+
+                }else{
                 if (currentDot != null && currentDot.GetComponent<Dot>().isMatched != true)
                 {
                     if (j > 0 && j < board.height - 1)
@@ -254,12 +264,17 @@ public class FindMatches : MonoBehaviour
                                             }
                                             }
                                             }
+            }
         }
 for (int i = 0; i < board.width; i++)
         {
             for (int j = 0; j < board.height; j++)
             {
                 GameObject currentDot = board.allDots[i, j];
+                if(currentDot.tag == "Dust Clump")
+                {
+
+                }else{
                 if (currentDot != null && currentDot.GetComponent<Dot>().isMatched != true)
                 {
                     if (j > 0 && j < board.height - 1)
@@ -290,6 +305,7 @@ for (int i = 0; i < board.width; i++)
                                             }
                                             }
                                             }
+            }
                                             }
     }
                             }
