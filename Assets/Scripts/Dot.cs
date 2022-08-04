@@ -21,7 +21,9 @@ public class Dot : MonoBehaviour
     private PowerUpManager powerUpManager;
     private FindMatches findMatches;
     private Board board;
+    private MoveTargets moveTargets;
     private GameObject otherDot;
+    
 
     private Vector2 firstTouchPosition;
     private Vector2 finalTouchPosition;
@@ -39,6 +41,9 @@ public class Dot : MonoBehaviour
         board = FindObjectOfType<Board>();
         powerUpManager = FindObjectOfType<PowerUpManager>();
         findMatches = FindObjectOfType<FindMatches>();
+        moveTargets = FindObjectOfType<MoveTargets>();
+
+
         //targetX = (int)transform.position.x;
         //targetY = (int)transform.position.y;
         //row = targetY;
@@ -50,9 +55,10 @@ public class Dot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //FindMatches();
 
-        //this makes the color grey during a match
+            //FindMatches();
+
+            //this makes the color grey during a match
         if (isMatched)
         {
             SpriteRenderer mySprite = GetComponent<SpriteRenderer>();
@@ -134,6 +140,10 @@ public class Dot : MonoBehaviour
         {
             hintManager.DestroyHint();
         }*/
+
+        moveTargets.SetTargets(gameObject);
+        moveTargets.selectTargetActive = true;
+
         if (powerUpManager.GetComponent<PowerUpManager>().PU1) // check for all power ups here but do nothing!
         {}
         else
@@ -148,6 +158,9 @@ public class Dot : MonoBehaviour
     //everything starts here
     private void OnMouseUp()
     {
+        moveTargets.selectTargetActive = false;
+
+
         //Debug.Log("check 2");
         if (powerUpManager.GetComponent<PowerUpManager>().PU1) // check for all power ups here but do nothing!
         {
@@ -230,6 +243,8 @@ public class Dot : MonoBehaviour
         }
         StartCoroutine(CheckMoveCo());
     }
+
+    
 
     /* void FindMatches()
      {
