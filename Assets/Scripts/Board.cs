@@ -307,15 +307,15 @@ public class Board : MonoBehaviour
         if (IsDeadlocked())
         {
             Debug.Log("Deadlocked!!!");
-            if (SceneManager.GetActiveScene().name == "Level 1")
+            if (SceneManager.GetActiveScene().name == "Level 1" && scoreManager.score > 3499) 
             {
                 SceneManager.LoadScene(sceneName: "level 2");
             }
-            else if (SceneManager.GetActiveScene().name == "Level 2")
+            else if (SceneManager.GetActiveScene().name == "Level 2" && scoreManager.score > 4199)
             {
                 SceneManager.LoadScene(sceneName: "level 3");
             }
-            else if (SceneManager.GetActiveScene().name == "Level 3")
+            else if (SceneManager.GetActiveScene().name == "Level 3" && scoreManager.score > 4999)
             {
                 Application.Quit();
             }
@@ -418,8 +418,9 @@ public class Board : MonoBehaviour
 
     private int DotToChoose()
     {
+        
         int dotNum = 0;
-        dotNum = Random.Range(0, 40);
+        dotNum = Random.Range(0, 70);
         if(dotNum < 2)
         {
             return 0;
@@ -438,6 +439,7 @@ public class Board : MonoBehaviour
                 return dotNum;
             }
         }
+            
 
     }
 }
