@@ -7,6 +7,8 @@ public class CutSceneManager : MonoBehaviour
     public GameObject text;
     public GameObject text1;
     public GameObject text2;
+    public GameObject textbox1;
+    public GameObject Textbox2;
 
     public int counter = 0;
 
