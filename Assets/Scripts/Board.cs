@@ -18,7 +18,8 @@ public class Board : MonoBehaviour
     public float dotSize;
     public float dotZPos = -.5f;
     public float totalScore = 0.0f;
-    
+    public StarCard starCard;
+    public GameObject starCardObject;
 
     public GameObject tilePrefab;
     public GameObject[] dots;
@@ -29,6 +30,7 @@ public class Board : MonoBehaviour
     private float streakValue = 1.0f;
     private ScoreManager scoreManager;
     private PowerUpManager powerUpManager;
+    public static bool GameIsPaused = false;
     //private bool specialSpawn = false;
 
     public int count = 0;
@@ -37,7 +39,7 @@ public class Board : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        starCard = FindObjectOfType<StarCard>();
         powerUpManager = FindObjectOfType<PowerUpManager>();
         scoreManager = FindObjectOfType<ScoreManager>();
         findMatches = FindObjectOfType<FindMatches>();
@@ -309,7 +311,9 @@ public class Board : MonoBehaviour
             Debug.Log("Deadlocked!!!");
             if (SceneManager.GetActiveScene().name == "Level 1" && scoreManager.score > 3499) 
             {
-                SceneManager.LoadScene(sceneName: "level 2");
+                starCardObject.SetActive(true);
+                GameIsPaused = true;
+                
             }
             else if (SceneManager.GetActiveScene().name == "Level 2" && scoreManager.score > 4199)
             {
@@ -420,8 +424,8 @@ public class Board : MonoBehaviour
     {
         
         int dotNum = 0;
-        dotNum = Random.Range(0, 70);
-        if(dotNum < 2)
+        dotNum = Random.Range(0, 50);
+        if(dotNum < 1)
         {
             return 0;
         }
