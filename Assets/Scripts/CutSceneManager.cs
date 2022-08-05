@@ -18,6 +18,7 @@ public class CutSceneManager : MonoBehaviour
     public GameObject text6;
     public GameObject background;
     public GameObject hyperspace;
+    public GameObject continueTtx;
 
     public int counter = 0;
 
@@ -88,6 +89,8 @@ public class CutSceneManager : MonoBehaviour
             text6.SetActive(false);
             textbox2.SetActive(false);
             supernova.SetActive(false);
+            textbox1.SetActive(true);
+            continueTtx.SetActive(true);
         } 
         if (counter == 8)
         {
