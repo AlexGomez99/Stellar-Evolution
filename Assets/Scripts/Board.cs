@@ -321,12 +321,16 @@ public class Board : MonoBehaviour
                 gameoverMenu.SetActive(true);
                 victorText.SetActive(true);
                 continueButton.SetActive(true);
+                lossText.SetActive(false);
+                reTryButton.SetActive(false);
             }
             else
             {
                 gameoverMenu.SetActive(true);
                 lossText.SetActive(true);
                 reTryButton.SetActive(true);
+                victorText.SetActive(false);
+                continueButton.SetActive(false);
             }
             if (SceneManager.GetActiveScene().name == "Level 2" && scoreManager.score > 1500)
             {
@@ -334,6 +338,8 @@ public class Board : MonoBehaviour
                 gameoverMenu.SetActive(true);
                 victorText.SetActive(true);
                 continueButton.SetActive(true);
+                lossText.SetActive(false);
+                reTryButton.SetActive(false);
             }
             else
             {
@@ -341,18 +347,24 @@ public class Board : MonoBehaviour
                 gameoverMenu.SetActive(true);
                 lossText.SetActive(true);
                 reTryButton.SetActive(true);
+                victorText.SetActive(false);
+                continueButton.SetActive(false);
             }
             if (SceneManager.GetActiveScene().name == "Level 3" && scoreManager.score > 2000)
             {
                 gameoverMenu.SetActive(true);
                 victorText.SetActive(true);
                 continueButton.SetActive(true);
+                lossText.SetActive(false);
+                reTryButton.SetActive(false);
             }
             else
             {
                 gameoverMenu.SetActive(true);
                 lossText.SetActive(true);
                 reTryButton.SetActive(true);
+                victorText.SetActive(false);
+                continueButton.SetActive(false);
             }
 
         }
