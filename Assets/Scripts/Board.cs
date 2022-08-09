@@ -316,56 +316,7 @@ public class Board : MonoBehaviour
         if (IsDeadlocked())
         {
             Debug.Log("Deadlocked!!!");
-            if (SceneManager.GetActiveScene().name == "Level 1" && scoreManager.score > 1250)
-            {
-                gameoverMenu.SetActive(true);
-                victorText.SetActive(true);
-                continueButton.SetActive(true);
-                lossText.SetActive(false);
-                reTryButton.SetActive(false);
-            }
-            else
-            {
-                gameoverMenu.SetActive(true);
-                lossText.SetActive(true);
-                reTryButton.SetActive(true);
-                victorText.SetActive(false);
-                continueButton.SetActive(false);
-            }
-            if (SceneManager.GetActiveScene().name == "Level 2" && scoreManager.score > 1500)
-            {
-                Debug.Log("you won");
-                gameoverMenu.SetActive(true);
-                victorText.SetActive(true);
-                continueButton.SetActive(true);
-                lossText.SetActive(false);
-                reTryButton.SetActive(false);
-            }
-            else
-            {
-                Debug.Log("you lost");
-                gameoverMenu.SetActive(true);
-                lossText.SetActive(true);
-                reTryButton.SetActive(true);
-                victorText.SetActive(false);
-                continueButton.SetActive(false);
-            }
-            if (SceneManager.GetActiveScene().name == "Level 3" && scoreManager.score > 2000)
-            {
-                gameoverMenu.SetActive(true);
-                victorText.SetActive(true);
-                continueButton.SetActive(true);
-                lossText.SetActive(false);
-                reTryButton.SetActive(false);
-            }
-            else
-            {
-                gameoverMenu.SetActive(true);
-                lossText.SetActive(true);
-                reTryButton.SetActive(true);
-                victorText.SetActive(false);
-                continueButton.SetActive(false);
-            }
+            Gameover();
 
         }
         else
@@ -520,6 +471,60 @@ public class Board : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Level 3")
         {
             SceneManager.LoadScene("Level 3");
+        }
+    }
+
+    public void Gameover()
+    {
+        if (SceneManager.GetActiveScene().name == "Level 1" && scoreManager.score > 1250)
+        {
+            gameoverMenu.SetActive(true);
+            victorText.SetActive(true);
+            continueButton.SetActive(true);
+            lossText.SetActive(false);
+            reTryButton.SetActive(false);
+        }
+        else
+        {
+            gameoverMenu.SetActive(true);
+            lossText.SetActive(true);
+            reTryButton.SetActive(true);
+            victorText.SetActive(false);
+            continueButton.SetActive(false);
+        }
+        if (SceneManager.GetActiveScene().name == "Level 2" && scoreManager.score > 1500)
+        {
+            Debug.Log("you won");
+            gameoverMenu.SetActive(true);
+            victorText.SetActive(true);
+            continueButton.SetActive(true);
+            lossText.SetActive(false);
+            reTryButton.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("you lost");
+            gameoverMenu.SetActive(true);
+            lossText.SetActive(true);
+            reTryButton.SetActive(true);
+            victorText.SetActive(false);
+            continueButton.SetActive(false);
+        }
+        if (SceneManager.GetActiveScene().name == "Level 3" && scoreManager.score > 2000)
+        {
+            gameoverMenu.SetActive(true);
+            victorText.SetActive(true);
+            continueButton.SetActive(true);
+            lossText.SetActive(false);
+            reTryButton.SetActive(false);
+        }
+        else
+        {
+            gameoverMenu.SetActive(true);
+            lossText.SetActive(true);
+            reTryButton.SetActive(true);
+            victorText.SetActive(false);
+            continueButton.SetActive(false);
         }
     }
 }
