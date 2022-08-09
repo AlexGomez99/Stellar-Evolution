@@ -330,12 +330,14 @@ public class Board : MonoBehaviour
             }
             if (SceneManager.GetActiveScene().name == "Level 2" && scoreManager.score > 1500)
             {
+                Debug.Log("you won");
                 gameoverMenu.SetActive(true);
                 victorText.SetActive(true);
                 continueButton.SetActive(true);
             }
             else
             {
+                Debug.Log("you lost");
                 gameoverMenu.SetActive(true);
                 lossText.SetActive(true);
                 reTryButton.SetActive(true);
