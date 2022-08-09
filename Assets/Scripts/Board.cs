@@ -33,6 +33,13 @@ public class Board : MonoBehaviour
     public static bool GameIsPaused = false;
     //private bool specialSpawn = false;
 
+    public GameObject gameoverMenu;
+    public GameObject victorText;
+    public GameObject lossText;
+    public GameObject continueButton;
+    public GameObject reTryButton;
+
+
     public int count = 0;
     public int PUcount = 0;
     
@@ -309,19 +316,41 @@ public class Board : MonoBehaviour
         if (IsDeadlocked())
         {
             Debug.Log("Deadlocked!!!");
-            if (SceneManager.GetActiveScene().name == "Level 1" && scoreManager.score > 3499) 
+            if (SceneManager.GetActiveScene().name == "Level 1" && scoreManager.score > 1250)
             {
-                starCardObject.SetActive(true);
-                GameIsPaused = true;
-                
+                gameoverMenu.SetActive(true);
+                victorText.SetActive(true);
+                continueButton.SetActive(true);
             }
-            else if (SceneManager.GetActiveScene().name == "Level 2" && scoreManager.score > 4199)
+            else
             {
-                SceneManager.LoadScene(sceneName: "level 3");
+                gameoverMenu.SetActive(true);
+                lossText.SetActive(true);
+                reTryButton.SetActive(true);
             }
-            else if (SceneManager.GetActiveScene().name == "Level 3" && scoreManager.score > 4999)
+            if (SceneManager.GetActiveScene().name == "Level 2" && scoreManager.score > 1500)
             {
-                Application.Quit();
+                gameoverMenu.SetActive(true);
+                victorText.SetActive(true);
+                continueButton.SetActive(true);
+            }
+            else
+            {
+                gameoverMenu.SetActive(true);
+                lossText.SetActive(true);
+                reTryButton.SetActive(true);
+            }
+            if (SceneManager.GetActiveScene().name == "Level 3" && scoreManager.score > 2000)
+            {
+                gameoverMenu.SetActive(true);
+                victorText.SetActive(true);
+                continueButton.SetActive(true);
+            }
+            else
+            {
+                gameoverMenu.SetActive(true);
+                lossText.SetActive(true);
+                reTryButton.SetActive(true);
             }
 
         }
@@ -446,5 +475,37 @@ public class Board : MonoBehaviour
         }
             
 
+    }
+
+    public void ContinueButton()
+    {
+        if(SceneManager.GetActiveScene().name == "Level 1")
+        {
+            SceneManager.LoadScene("Level 1 transition");
+        }
+        if (SceneManager.GetActiveScene().name == "Level 2")
+        {
+            SceneManager.LoadScene("Final cut scene");
+        }
+        if (SceneManager.GetActiveScene().name == "Level 3")
+        {
+            SceneManager.LoadScene("");
+        }
+    }
+
+    public void RetryButton()
+    {
+        if (SceneManager.GetActiveScene().name == "Level 1")
+        {
+            SceneManager.LoadScene("Level 1");
+        }
+        if (SceneManager.GetActiveScene().name == "Level 2")
+        {
+            SceneManager.LoadScene("Level 2");
+        }
+        if (SceneManager.GetActiveScene().name == "Level 3")
+        {
+            SceneManager.LoadScene("Level 3");
+        }
     }
 }
