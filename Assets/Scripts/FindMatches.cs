@@ -68,7 +68,11 @@ public class FindMatches : MonoBehaviour
                                     currentDot.GetComponent<Dot>().isMatched = true;
                                     alreadyMatched1 = true;
                                     Debug.Log("we got a 5 match horz");
-                                    scoreManager.IncreaseScore(50);
+                                    if(currentDot.tag == "Special Helium"){
+                                        scoreManager.IncreaseScore(200);
+                                    }else{
+                                        scoreManager.IncreaseScore(50);
+                                    }
                                     wasLargeHMatch = true;
                                     AM.matchSound.Play();
                                 }
@@ -115,7 +119,11 @@ public class FindMatches : MonoBehaviour
                                     currentDot.GetComponent<Dot>().isMatched = true;
                                     alreadyMatched1 = true;
                                     Debug.Log("we got a 4 match horz");
-                                    scoreManager.IncreaseScore(25);
+                                    if(currentDot.tag == "Special Helium"){
+                                        scoreManager.IncreaseScore(75);
+                                    }else{
+                                        scoreManager.IncreaseScore(45);
+                                    }
                                     wasLargeHMatch = true;
                                     AM.matchSound.Play();
                                 }
@@ -158,7 +166,11 @@ public class FindMatches : MonoBehaviour
                                     leftDot.GetComponent<Dot>().isMatched = true;
                                     currentDot.GetComponent<Dot>().isMatched = true;
                                     Debug.Log("we got a 3 match horz");
-                                    scoreManager.IncreaseScore(15);
+                                    if(currentDot.tag == "Special Helium"){
+                                        scoreManager.IncreaseScore(45);
+                                    }else{
+                                        scoreManager.IncreaseScore(15);
+                                    }
                                     AM.matchSound.Play();
                                     
                                 }
@@ -207,7 +219,11 @@ public class FindMatches : MonoBehaviour
                                     currentDot.GetComponent<Dot>().isMatched = true;
                                     alreadyMatched = true;
                                     Debug.Log("we got a 5 match vert");
-                                    scoreManager.IncreaseScore(50);
+                                    if(currentDot.tag == "Special Helium"){
+                                        scoreManager.IncreaseScore(200);
+                                    }else{
+                                        scoreManager.IncreaseScore(50);
+                                    }
                                     wasLargeVMatch = true;
                                     AM.matchSound.Play();
 
@@ -253,7 +269,11 @@ public class FindMatches : MonoBehaviour
                                     currentDot.GetComponent<Dot>().isMatched = true;
                                     alreadyMatched = true;
                                     Debug.Log("we got a 4 match vert");
-                                    scoreManager.IncreaseScore(25);
+                                    if(currentDot.tag == "Special Helium"){
+                                        scoreManager.IncreaseScore(75);
+                                    }else{
+                                        scoreManager.IncreaseScore(25);
+                                    }
                                     wasLargeVMatch = true;
                                     AM.matchSound.Play();
 
@@ -295,7 +315,12 @@ for (int i = 0; i < board.width; i++)
                                     currentDot.GetComponent<Dot>().isMatched = true;
                                     alreadyMatched = true;
                                     Debug.Log("we got a 3 match vert");
-                                    scoreManager.IncreaseScore(15);
+                                    if(currentDot.tag == "Special Helium"){
+                                        scoreManager.IncreaseScore(45);
+                                    }else{
+                                        scoreManager.IncreaseScore(15);
+                                    }
+                                    
                                     wasLargeVMatch = true;
                                     AM.matchSound.Play();
 
