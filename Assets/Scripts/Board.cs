@@ -489,7 +489,7 @@ public class Board : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().name == "Level 3")
         {
-            SceneManager.LoadScene("");
+            SceneManager.LoadScene("Opening Scene");
         }
     }
 

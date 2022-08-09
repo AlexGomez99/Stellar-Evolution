@@ -1441,7 +1441,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -747, y: 350}
+  m_AnchoredPosition: {x: -866, y: 296}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &900748967
@@ -3186,7 +3186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7208016888021774983, guid: c244f0961d5bb004eabf744d0ded468d, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7208016888021774983, guid: c244f0961d5bb004eabf744d0ded468d, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3259,6 +3259,22 @@ PrefabInstance:
     - target: {fileID: 7208016888021774983, guid: c244f0961d5bb004eabf744d0ded468d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208016889175619722, guid: c244f0961d5bb004eabf744d0ded468d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 110241440}
+    - target: {fileID: 7208016889175619722, guid: c244f0961d5bb004eabf744d0ded468d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ContinueButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7208016889673060855, guid: c244f0961d5bb004eabf744d0ded468d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 110241440}
+    - target: {fileID: 7208016889673060855, guid: c244f0961d5bb004eabf744d0ded468d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RetryButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c244f0961d5bb004eabf744d0ded468d, type: 3}
