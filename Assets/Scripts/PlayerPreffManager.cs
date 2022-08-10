@@ -16,7 +16,13 @@ public class PlayerPreffManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        PlayerPrefs.SetInt("SC1", 1);
+        PlayerPrefs.SetInt("SC2", 1);
+        PlayerPrefs.SetInt("SC3", 1);
+        PlayerPrefs.SetInt("SC4", 1);
+        PlayerPrefs.SetInt("SC5", 1);
+        PlayerPrefs.SetInt("SC6", 1);
+
     }
 
     // Update is called once per frame
