@@ -31,6 +31,12 @@ public class Board : MonoBehaviour
     private ScoreManager scoreManager;
     private PowerUpManager powerUpManager;
     public static bool GameIsPaused = false;
+    public GameObject gameoverMenu;
+    public GameObject victorText;
+    public GameObject continueButton;
+    public GameObject lossText;
+    public GameObject reTryButton;
+    
     //private bool specialSpawn = false;
 
     public int count = 0;
@@ -446,8 +452,7 @@ public class Board : MonoBehaviour
             
 
     }
-<<<<<<< HEAD
-=======
+
 
     public void ContinueButton()
     {
@@ -534,5 +539,4 @@ public class Board : MonoBehaviour
             continueButton.SetActive(false);
         }
     }
->>>>>>> parent of aca9ffc (level end fix)
 }
