@@ -424,11 +424,11 @@ public class Board : MonoBehaviour
     {
         
         int dotNum = 0;
-<<<<<<< HEAD
+
         dotNum = Random.Range(0, 50);
-=======
+
         dotNum = Random.Range(0, 70);
->>>>>>> 36c33013e9e5af3c4a7c8b04ca312f73aa94c40f
+ 
         if(dotNum < 1)
         {
             return 0;
