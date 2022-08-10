@@ -8,9 +8,13 @@ public class ScoreManager : MonoBehaviour
     public Text scoreText;
     public Text highscoreText;
     public float score;
+    public FillBar fillBar;
 
 
-    
+    private void Start()
+    {
+        fillBar = FindObjectOfType<FillBar>();
+    }
 
 
     // Update is called once per frame
@@ -27,6 +31,7 @@ public class ScoreManager : MonoBehaviour
         //Debug.Log(amountToIncrease);
         score += amountToIncrease;
         scoreText.text = "" + (int)score;
+        fillBar.ChangeFillBar(score);
 
     }
 }
