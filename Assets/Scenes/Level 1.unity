@@ -1831,7 +1831,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &900748966
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4520,6 +4520,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   matchSound: {fileID: 2049757200}
+  bloop2: {fileID: 0}
+  bloop1: {fileID: 0}
+  bloop3: {fileID: 0}
+  bloop4: {fileID: 0}
+  bloop5: {fileID: 0}
+  bloop6: {fileID: 0}
+  anotherAscension: {fileID: 0}
+  ascendingSaucer: {fileID: 0}
+  bigSqueep: {fileID: 0}
+  bloopAscended: {fileID: 0}
+  brilliant2: {fileID: 0}
+  buzzer: {fileID: 0}
+  coinSound: {fileID: 0}
+  cosmic3: {fileID: 0}
+  error3: {fileID: 0}
+  highScore1: {fileID: 0}
+  highScore4: {fileID: 0}
+  illegalMove2: {fileID: 0}
+  interstellar3: {fileID: 0}
+  luminous3: {fileID: 0}
+  magneticAnomaly1: {fileID: 0}
+  outOfThisWorld1: {fileID: 0}
+  powerDown: {fileID: 0}
+  radiant1: {fileID: 0}
+  solarFlare3: {fileID: 0}
+  spectacular1: {fileID: 0}
+  spectacular4: {fileID: 0}
+  squeep: {fileID: 0}
+  stellar1: {fileID: 0}
+  stellarMatch2: {fileID: 0}
+  transcendentBloop: {fileID: 0}
+  tryAgain3: {fileID: 0}
+  tryAgain4: {fileID: 0}
+  winner2: {fileID: 0}
 --- !u!4 &1938769726
 Transform:
   m_ObjectHideFlags: 0
@@ -4633,6 +4667,7 @@ MonoBehaviour:
   scoreText: {fileID: 1446561919}
   highscoreText: {fileID: 0}
   score: 0
+  fillBar: {fileID: 0}
 --- !u!1 &2049757199
 GameObject:
   m_ObjectHideFlags: 0
