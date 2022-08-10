@@ -424,15 +424,7 @@ public class Board : MonoBehaviour
     {
         
         int dotNum = 0;
-
-
         dotNum = Random.Range(0, 50);
-
-        dotNum = Random.Range(0, 70);
- 
-
-        dotNum = Random.Range(0, 50);
-
         if(dotNum < 1)
         {
             return 0;

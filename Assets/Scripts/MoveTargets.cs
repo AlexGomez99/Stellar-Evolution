@@ -28,6 +28,7 @@ public class MoveTargets : MonoBehaviour
     {
         if (selectTargetActive)
         {
+            Debug.Log("select the targeting");
             SelectTargets();
         }
         else
@@ -55,6 +56,7 @@ public class MoveTargets : MonoBehaviour
         Vector3 temp;
         temp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         float dist = Vector2.Distance(temp, dot.transform.position);
+        Debug.Log(temp+ "     "+ dot.transform.position +"   ="+  dist);
 
 
         if (dist > 1.08f)
