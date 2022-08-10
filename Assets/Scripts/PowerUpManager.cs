@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PowerUpManager : MonoBehaviour
 {
+    
+    public GameObject daButton;
     private Board board;
 
     public bool PU1 = true;
@@ -20,12 +22,7 @@ public class PowerUpManager : MonoBehaviour
     }
     public void PU1ToggleOn()
     {
-        if(PU1 == true){
-            PU1 = false;
-        }
-        else{
-            PU1 = true;
-        }
+        daButton.SetActive(false);
     }
     public void PU1Execute(int row)
     {

@@ -43,7 +43,7 @@ public class FindMatches : MonoBehaviour
                 {
 
                 }else{
-                if (currentDot != null && currentDot.GetComponent<Dot>().isMatched != true)
+                if (currentDot != null)
                 {
                     //checks for h matches
                     if (i > 0 && i < board.width - 1)
@@ -52,7 +52,7 @@ public class FindMatches : MonoBehaviour
                         GameObject rightDot = board.allDots[i + 1, j];
                         GameObject leftDot = board.allDots[i - 1, j];
 
-                        if (rightDot != null && leftDot != null && currentDot.GetComponent<Dot>().isMatched != true)
+                        if (rightDot != null && leftDot != null)
                         {
 
                             if (i > 1 && i < board.width - 2)
@@ -96,7 +96,7 @@ public class FindMatches : MonoBehaviour
                 {
 
                 }else{
-                    if (currentDot != null && currentDot.GetComponent<Dot>().isMatched != true) 
+                    if (currentDot != null) 
                 {
                     //checks for h matches
                     if (i > 0 && i < board.width - 1)
@@ -105,7 +105,7 @@ public class FindMatches : MonoBehaviour
                         GameObject rightDot = board.allDots[i + 1, j];
                         GameObject leftDot = board.allDots[i - 1, j];
 
-                        if (rightDot != null && leftDot != null && currentDot.GetComponent<Dot>().isMatched != true)
+                        if (rightDot != null && leftDot != null)
                         {
 
                             if (i > 0 && i < board.width - 2)
@@ -147,7 +147,7 @@ public class FindMatches : MonoBehaviour
                 {
 
                 }else{
-                    if (currentDot != null && currentDot.GetComponent<Dot>().isMatched != true)
+                    if (currentDot != null)
                 {
                     if (i > 0 && i < board.width - 1)
                     {
@@ -195,7 +195,7 @@ public class FindMatches : MonoBehaviour
                 {
 
                 }else{
-                if (currentDot != null && currentDot.GetComponent<Dot>().isMatched != true)
+                if (currentDot != null)
                 {
                     if (j > 0 && j < board.height - 1)
                     {
@@ -203,7 +203,7 @@ public class FindMatches : MonoBehaviour
                         GameObject upDot = board.allDots[i, j + 1];
                         GameObject downDot = board.allDots[i, j - 1];
                             
-                        if (upDot != null && downDot != null  && currentDot.GetComponent<Dot>().isMatched != true)
+                        if (upDot != null && downDot != null )
                         {
                                 
                             if (j > 1 && j < board.height - 2)
@@ -246,7 +246,7 @@ public class FindMatches : MonoBehaviour
                 {
 
                 }else{
-                if (currentDot != null && currentDot.GetComponent<Dot>().isMatched != true)
+                if (currentDot != null)
                 {
                     if (j > 0 && j < board.height - 1)
                     {
@@ -254,7 +254,7 @@ public class FindMatches : MonoBehaviour
                         GameObject upDot = board.allDots[i, j + 1];
                         GameObject downDot = board.allDots[i, j - 1];
                             
-                        if (upDot != null && downDot != null && currentDot.GetComponent<Dot>().isMatched != true)
+                        if (upDot != null && downDot != null)
                         {
                                 
                             if (j > 0 && j < board.height - 2)
@@ -295,7 +295,7 @@ for (int i = 0; i < board.width; i++)
                 {
 
                 }else{
-                if (currentDot != null && currentDot.GetComponent<Dot>().isMatched != true)
+                if (currentDot != null)
                 {
                     if (j > 0 && j < board.height - 1)
                     {
@@ -303,7 +303,7 @@ for (int i = 0; i < board.width; i++)
                         GameObject upDot = board.allDots[i, j + 1];
                         GameObject downDot = board.allDots[i, j - 1];
                             
-                        if (upDot != null && downDot != null && currentDot.GetComponent<Dot>().isMatched != true)
+                        if (upDot != null && downDot != null)
                         {
                                 
                             
