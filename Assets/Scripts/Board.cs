@@ -309,17 +309,17 @@ public class Board : MonoBehaviour
         if (IsDeadlocked())
         {
             Debug.Log("Deadlocked!!!");
-            if (SceneManager.GetActiveScene().name == "Level 1" && scoreManager.score > 3499) 
+            if (SceneManager.GetActiveScene().name == "Level 1" && scoreManager.score > 1499) 
             {
                 starCardObject.SetActive(true);
                 GameIsPaused = true;
                 
             }
-            else if (SceneManager.GetActiveScene().name == "Level 2" && scoreManager.score > 4199)
+            else if (SceneManager.GetActiveScene().name == "Level 2" && scoreManager.score > 2199)
             {
                 SceneManager.LoadScene(sceneName: "level 3");
             }
-            else if (SceneManager.GetActiveScene().name == "Level 3" && scoreManager.score > 4999)
+            else if (SceneManager.GetActiveScene().name == "Level 3" && scoreManager.score > 3999)
             {
                 Application.Quit();
             }
@@ -424,11 +424,7 @@ public class Board : MonoBehaviour
     {
         
         int dotNum = 0;
-<<<<<<< HEAD
         dotNum = Random.Range(0, 50);
-=======
-        dotNum = Random.Range(0, 70);
->>>>>>> 36c33013e9e5af3c4a7c8b04ca312f73aa94c40f
         if(dotNum < 1)
         {
             return 0;

@@ -253,6 +253,7 @@ MonoBehaviour:
   dotZPos: -0.5
   totalScore: 0
   starCard: {fileID: 1092778724}
+  starCardObject: {fileID: 1092778724}
   tilePrefab: {fileID: 3045270244796084577, guid: 86d12e60a3baf2c45a48dea9084c1325, type: 3}
   dots:
   - {fileID: 7078337626321347104, guid: 214c6a82f1eca734583a35afd9ad62e8, type: 3}
@@ -2508,8 +2509,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 356563791}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+      - m_Target: {fileID: 356563792}
+        m_TargetAssemblyTypeName: StarCard, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
@@ -3016,8 +3017,9 @@ GameObject:
   - component: {fileID: 1092778728}
   - component: {fileID: 1092778727}
   - component: {fileID: 1092778726}
+  - component: {fileID: 1092778729}
   m_Layer: 5
-  m_Name: starcard
+  m_Name: StarCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3108,6 +3110,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1092778729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092778724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e76663c49e19664d90da3de8a82c2df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starCard: {fileID: 1092778724}
 --- !u!1 &1200528848
 GameObject:
   m_ObjectHideFlags: 0
@@ -4260,7 +4275,7 @@ GameObject:
   - component: {fileID: 1795710451}
   - component: {fileID: 1795710450}
   m_Layer: 5
-  m_Name: StarCard
+  m_Name: screenthing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4830,8 +4845,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 356563791}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+      - m_Target: {fileID: 356563792}
+        m_TargetAssemblyTypeName: StarCard, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
         m_Arguments:

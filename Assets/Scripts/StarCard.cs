@@ -12,18 +12,6 @@ public class StarCard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            if (GameIsPaused)
-            {
-                Resume();
-            }
-            else
-            {
-               Pause();
-            }
-
-        }
 
 
 
@@ -31,10 +19,15 @@ public class StarCard : MonoBehaviour
 
     public void Resume()
     {
-        starCard.SetActive(false);
-        Time.timeScale = 1f;
-        GameIsPaused = false;
-        SceneManager.LoadScene(sceneName: "level 2");
+        if (SceneManager.GetActiveScene().name == "Level 2")
+            {
+                SceneManager.LoadScene(sceneName: "level 3");
+            }
+        
+        else if (SceneManager.GetActiveScene().name == "Level 1")
+            {
+                SceneManager.LoadScene(sceneName: "level 2");
+            }
     }
 
    public void Pause()
