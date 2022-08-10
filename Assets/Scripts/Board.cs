@@ -476,55 +476,66 @@ public class Board : MonoBehaviour
 
     public void Gameover()
     {
-        if (SceneManager.GetActiveScene().name == "Level 1" && scoreManager.score > 1250)
+        if (SceneManager.GetActiveScene().name == "Level 1")
         {
-            gameoverMenu.SetActive(true);
-            victorText.SetActive(true);
-            continueButton.SetActive(true);
-            lossText.SetActive(false);
-            reTryButton.SetActive(false);
+            if (scoreManager.score > 1250)
+            {
+                gameoverMenu.SetActive(true);
+                victorText.SetActive(true);
+                continueButton.SetActive(true);
+                lossText.SetActive(false);
+                reTryButton.SetActive(false);
+            }
+            else
+            {
+                gameoverMenu.SetActive(true);
+                lossText.SetActive(true);
+                reTryButton.SetActive(true);
+                victorText.SetActive(false);
+                continueButton.SetActive(false);
+            }
+        }
+        else if (SceneManager.GetActiveScene().name == "Level 2")
+        {
+            if (scoreManager.score > 1500)
+            {
+                Debug.Log("you won");
+                gameoverMenu.SetActive(true);
+                victorText.SetActive(true);
+                continueButton.SetActive(true);
+                lossText.SetActive(false);
+                reTryButton.SetActive(false);
+            }
+            else
+            {
+                Debug.Log("you lost");
+                gameoverMenu.SetActive(true);
+                lossText.SetActive(true);
+                reTryButton.SetActive(true);
+                victorText.SetActive(false);
+                continueButton.SetActive(false);
+            }
         }
         else
+        if (SceneManager.GetActiveScene().name == "Level 3")
         {
-            gameoverMenu.SetActive(true);
-            lossText.SetActive(true);
-            reTryButton.SetActive(true);
-            victorText.SetActive(false);
-            continueButton.SetActive(false);
+            if (scoreManager.score > 2000)
+            {
+                gameoverMenu.SetActive(true);
+                victorText.SetActive(true);
+                continueButton.SetActive(true);
+                lossText.SetActive(false);
+                reTryButton.SetActive(false);
+            }
+            else
+            {
+                gameoverMenu.SetActive(true);
+                lossText.SetActive(true);
+                reTryButton.SetActive(true);
+                victorText.SetActive(false);
+                continueButton.SetActive(false);
+            }
         }
-        if (SceneManager.GetActiveScene().name == "Level 2" && scoreManager.score > 1500)
-        {
-            Debug.Log("you won");
-            gameoverMenu.SetActive(true);
-            victorText.SetActive(true);
-            continueButton.SetActive(true);
-            lossText.SetActive(false);
-            reTryButton.SetActive(false);
-        }
-        else
-        {
-            Debug.Log("you lost");
-            gameoverMenu.SetActive(true);
-            lossText.SetActive(true);
-            reTryButton.SetActive(true);
-            victorText.SetActive(false);
-            continueButton.SetActive(false);
-        }
-        if (SceneManager.GetActiveScene().name == "Level 3" && scoreManager.score > 2000)
-        {
-            gameoverMenu.SetActive(true);
-            victorText.SetActive(true);
-            continueButton.SetActive(true);
-            lossText.SetActive(false);
-            reTryButton.SetActive(false);
-        }
-        else
-        {
-            gameoverMenu.SetActive(true);
-            lossText.SetActive(true);
-            reTryButton.SetActive(true);
-            victorText.SetActive(false);
-            continueButton.SetActive(false);
-        }
+
     }
 }
