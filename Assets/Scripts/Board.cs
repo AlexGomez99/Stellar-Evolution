@@ -446,4 +446,93 @@ public class Board : MonoBehaviour
             
 
     }
+<<<<<<< HEAD
+=======
+
+    public void ContinueButton()
+    {
+        if(SceneManager.GetActiveScene().name == "Level 1")
+        {
+            SceneManager.LoadScene("Level 1 transition");
+        }
+        if (SceneManager.GetActiveScene().name == "Level 2")
+        {
+            SceneManager.LoadScene("Final cut scene");
+        }
+        if (SceneManager.GetActiveScene().name == "Level 3")
+        {
+            SceneManager.LoadScene("Opening Scene");
+        }
+    }
+
+    public void RetryButton()
+    {
+        if (SceneManager.GetActiveScene().name == "Level 1")
+        {
+            SceneManager.LoadScene("Level 1");
+        }
+        if (SceneManager.GetActiveScene().name == "Level 2")
+        {
+            SceneManager.LoadScene("Level 2");
+        }
+        if (SceneManager.GetActiveScene().name == "Level 3")
+        {
+            SceneManager.LoadScene("Level 3");
+        }
+    }
+
+    public void Gameover()
+    {
+        if (SceneManager.GetActiveScene().name == "Level 1" && scoreManager.score > 1250)
+        {
+            gameoverMenu.SetActive(true);
+            victorText.SetActive(true);
+            continueButton.SetActive(true);
+            lossText.SetActive(false);
+            reTryButton.SetActive(false);
+        }
+        else
+        {
+            gameoverMenu.SetActive(true);
+            lossText.SetActive(true);
+            reTryButton.SetActive(true);
+            victorText.SetActive(false);
+            continueButton.SetActive(false);
+        }
+        if (SceneManager.GetActiveScene().name == "Level 2" && scoreManager.score > 1500)
+        {
+            Debug.Log("you won");
+            gameoverMenu.SetActive(true);
+            victorText.SetActive(true);
+            continueButton.SetActive(true);
+            lossText.SetActive(false);
+            reTryButton.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("you lost");
+            gameoverMenu.SetActive(true);
+            lossText.SetActive(true);
+            reTryButton.SetActive(true);
+            victorText.SetActive(false);
+            continueButton.SetActive(false);
+        }
+        if (SceneManager.GetActiveScene().name == "Level 3" && scoreManager.score > 2000)
+        {
+            gameoverMenu.SetActive(true);
+            victorText.SetActive(true);
+            continueButton.SetActive(true);
+            lossText.SetActive(false);
+            reTryButton.SetActive(false);
+        }
+        else
+        {
+            gameoverMenu.SetActive(true);
+            lossText.SetActive(true);
+            reTryButton.SetActive(true);
+            victorText.SetActive(false);
+            continueButton.SetActive(false);
+        }
+    }
+>>>>>>> parent of aca9ffc (level end fix)
 }
