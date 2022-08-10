@@ -217,7 +217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &58692282
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1650,7 +1650,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &316431659
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2845,7 +2845,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &587106500
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6739,7 +6739,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1218410134
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8523,6 +8523,9 @@ MonoBehaviour:
   SC4: {fileID: 587106499}
   SC5: {fileID: 2049156727}
   SC6: {fileID: 58692281}
+  SClev1: {fileID: 945444769}
+  SClev2: {fileID: 392622292}
+  SClev3: {fileID: 795807163}
 --- !u!1001 &1509220637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9002,7 +9005,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1594062672
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10800,7 +10803,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2049156728
 RectTransform:
   m_ObjectHideFlags: 0

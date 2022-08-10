@@ -12,6 +12,11 @@ public class PlayerPreffManager : MonoBehaviour
     public GameObject SC5;
     public GameObject SC6;
 
+    public GameObject SClev1;
+    public GameObject SClev2;
+    public GameObject SClev3;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +39,10 @@ public class PlayerPreffManager : MonoBehaviour
 
     public void CheckLev1()
     {
+        SClev1.SetActive(true);
+        SClev2.SetActive(false);
+        SClev3.SetActive(false);
+
         int temp1 = PlayerPrefs.GetInt("SC1");
         int temp2 = PlayerPrefs.GetInt("SC2");
 
@@ -56,46 +65,58 @@ public class PlayerPreffManager : MonoBehaviour
     }
     public void CheckLev2()
     {
+        SClev1.SetActive(false);
+        SClev2.SetActive(true);
+        SClev3.SetActive(false);
+
         int temp1 = PlayerPrefs.GetInt("SC3");
         int temp2 = PlayerPrefs.GetInt("SC4");
-
+        Debug.Log("k");
         if (temp1 == 1)
         {
-            SC1.SetActive(true);
+            Debug.Log("ye");
+
+            SC3.SetActive(true);
         }
         else
         {
-            SC1.SetActive(false);
+            Debug.Log("ne");
+
+            SC3.SetActive(false);
         }
         if (temp2 == 1)
         {
-            SC2.SetActive(true);
+            SC4.SetActive(true);
         }
         else
         {
-            SC2.SetActive(false);
+            SC4.SetActive(false);
         }
     }
     public void CheckLev3()
     {
+        SClev1.SetActive(false);
+        SClev2.SetActive(false);
+        SClev3.SetActive(true);
+
         int temp1 = PlayerPrefs.GetInt("SC5");
         int temp2 = PlayerPrefs.GetInt("SC6");
 
         if (temp1 == 1)
         {
-            SC1.SetActive(true);
+            SC5.SetActive(true);
         }
         else
         {
-            SC1.SetActive(false);
+            SC5.SetActive(false);
         }
         if (temp2 == 1)
         {
-            SC2.SetActive(true);
+            SC6.SetActive(true);
         }
         else
         {
-            SC2.SetActive(false);
+            SC6.SetActive(false);
         }
     }
 }
