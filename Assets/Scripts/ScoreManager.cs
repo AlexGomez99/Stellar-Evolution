@@ -9,6 +9,7 @@ public class ScoreManager : MonoBehaviour
     public Text highscoreText;
     public float score;
     public FillBar fillBar;
+    public float powerUp;
 
 
     private void Start()
@@ -30,6 +31,7 @@ public class ScoreManager : MonoBehaviour
     {
         //Debug.Log(amountToIncrease);
         score += amountToIncrease;
+        powerUp += amountToIncrease;
         scoreText.text = "" + (int)score;
         fillBar.ChangeFillBar(score);
 
