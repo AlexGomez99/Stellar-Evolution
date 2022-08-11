@@ -52,7 +52,8 @@ public class Board : MonoBehaviour
         findMatches = FindObjectOfType<FindMatches>();
         allTiles = new BackgroundTile[width, height];
         allDots = new GameObject[width, height];
-        
+
+        SetUp();
     }
 
     public void SetUp()
