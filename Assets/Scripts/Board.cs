@@ -64,6 +64,9 @@ public class Board : MonoBehaviour
 
     public void SetUp()
     {
+        AM.starSwapTheme.loop = true;
+        AM.starSwapTheme.Play();
+
         for (int i = 0; i < width; i++)
         {
             for(int j = 0; j < height; j++)
@@ -153,9 +156,6 @@ public class Board : MonoBehaviour
             //  findMatches.currentMatches.Remove(allDots[column, row]);
             Destroy(allDots[column, row]);
             
-            
-            
-            AM.bloop1.Play();
             
 
 

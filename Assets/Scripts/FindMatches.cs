@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 //testing script 
 //every frame checks the whole array of dots for horizontal and vertical matches and if it finds one it adds to a list
 
@@ -74,7 +74,95 @@ public class FindMatches : MonoBehaviour
                                         scoreManager.IncreaseScore(50);
                                     }
                                     wasLargeHMatch = true;
-                                    //AM.matchSound.Play();
+                                    if(SceneManager.GetActiveScene().name == "Level 1")
+                                    {
+                                        int soundNum = Random.Range(0, 8);
+                                        if(soundNum == 0){
+                                            AM.bloop1.Play();
+                                        }
+                                    else if(soundNum == 1){
+                                        AM.bigSqueep.Play();
+                                    }
+                                    else if(soundNum == 2){
+                                        AM.bloop4.Play();
+                                    }
+                                    else if(soundNum == 3){
+                                        AM.brilliant2.Play();
+                                    }
+                                    else if(soundNum == 4){
+                                        AM.squeep.Play();
+                                    }
+                                    else if(soundNum == 5){
+                                        AM.stellar1.Play();
+                                    }
+                                    else if(soundNum == 6){
+                                        AM.radiant1.Play();
+                                    }
+                                    else if(soundNum == 7){
+                                        AM.matchSound.Play();
+                                    }
+                                    }
+                                    if(SceneManager.GetActiveScene().name == "Level 2")
+                                    {
+                                        int soundNum = Random.Range(0, 8);
+                                        if(soundNum == 0){
+                                            AM.bloop1.Play();
+                                        }
+                                    else if(soundNum == 1){
+                                        AM.radiant1.Play();
+                                    }
+                                    else if(soundNum == 2){
+                                        AM.bloop4.Play();
+                                    }
+                                    else if(soundNum == 3){
+                                        AM.luminous3.Play();
+                                    }
+                                    else if(soundNum == 4){
+                                        AM.squeep.Play();
+                                    }
+                                    else if(soundNum == 5){
+                                        AM.stellar1.Play();
+                                    }
+                                    else if(soundNum == 6){
+                                        AM.spectacular4.Play();
+                                        
+                                    }
+                                    else if(soundNum == 7){
+                                        AM.matchSound.Play();
+                                    }
+                                    
+                                    
+                                    }
+
+                                    if(SceneManager.GetActiveScene().name == "Level 3")
+                                    {
+                                        int soundNum = Random.Range(0, 8);
+                                        if(soundNum == 0){
+                                            AM.bloop1.Play();
+                                        }
+                                    else if(soundNum == 1){
+                                        AM.radiant1.Play();
+                                    }
+                                    else if(soundNum == 2){
+                                        AM.bloop4.Play();
+                                    }
+                                    else if(soundNum == 3){
+                                        AM.cosmic3.Play();
+                                    }
+                                    else if(soundNum == 4){
+                                        AM.squeep.Play();
+                                    }
+                                    else if(soundNum == 5){
+                                        AM.stellar1.Play();
+                                    }
+                                    else if(soundNum == 6){
+                                        AM.spectacular4.Play();
+                                    }
+                                    else if(soundNum == 7){
+                                        AM.matchSound.Play();
+                                    }
+                                    
+                                    }
                                 }
                             }
                         }
@@ -125,7 +213,95 @@ public class FindMatches : MonoBehaviour
                                         scoreManager.IncreaseScore(45);
                                     }
                                     wasLargeHMatch = true;
-                                    //
+                                    if(SceneManager.GetActiveScene().name == "Level 1")
+                                    {
+                                        int soundNum = Random.Range(0, 8);
+                                        if(soundNum == 0){
+                                            AM.bloop1.Play();
+                                        }
+                                    else if(soundNum == 1){
+                                        AM.bigSqueep.Play();
+                                    }
+                                    else if(soundNum == 2){
+                                        AM.bloop4.Play();
+                                    }
+                                    else if(soundNum == 3){
+                                        AM.brilliant2.Play();
+                                    }
+                                    else if(soundNum == 4){
+                                        AM.squeep.Play();
+                                    }
+                                    else if(soundNum == 5){
+                                        AM.stellar1.Play();
+                                    }
+                                    else if(soundNum == 6){
+                                        AM.radiant1.Play();
+                                    }
+                                    else if(soundNum == 7){
+                                        AM.matchSound.Play();
+                                    }
+                                    }
+                                    if(SceneManager.GetActiveScene().name == "Level 2")
+                                    {
+                                        int soundNum = Random.Range(0, 8);
+                                        if(soundNum == 0){
+                                            AM.bloop1.Play();
+                                        }
+                                    else if(soundNum == 1){
+                                        AM.radiant1.Play();
+                                    }
+                                    else if(soundNum == 2){
+                                        AM.bloop4.Play();
+                                    }
+                                    else if(soundNum == 3){
+                                        AM.luminous3.Play();
+                                    }
+                                    else if(soundNum == 4){
+                                        AM.squeep.Play();
+                                    }
+                                    else if(soundNum == 5){
+                                        AM.stellar1.Play();
+                                    }
+                                    else if(soundNum == 6){
+                                        AM.spectacular4.Play();
+                                        
+                                    }
+                                    else if(soundNum == 7){
+                                        AM.matchSound.Play();
+                                    }
+                                    
+                                    
+                                    }
+
+                                    if(SceneManager.GetActiveScene().name == "Level 3")
+                                    {
+                                        int soundNum = Random.Range(0, 8);
+                                        if(soundNum == 0){
+                                            AM.bloop1.Play();
+                                        }
+                                    else if(soundNum == 1){
+                                        AM.radiant1.Play();
+                                    }
+                                    else if(soundNum == 2){
+                                        AM.bloop4.Play();
+                                    }
+                                    else if(soundNum == 3){
+                                        AM.cosmic3.Play();
+                                    }
+                                    else if(soundNum == 4){
+                                        AM.squeep.Play();
+                                    }
+                                    else if(soundNum == 5){
+                                        AM.stellar1.Play();
+                                    }
+                                    else if(soundNum == 6){
+                                        AM.spectacular4.Play();
+                                    }
+                                    else if(soundNum == 7){
+                                        AM.matchSound.Play();
+                                    }
+                                    
+                                    }
                                 }
                             }
                         }
@@ -171,7 +347,95 @@ public class FindMatches : MonoBehaviour
                                     }else{
                                         scoreManager.IncreaseScore(15);
                                     }
-                                    //
+                                    if(SceneManager.GetActiveScene().name == "Level 1")
+                                    {
+                                        int soundNum = Random.Range(0, 8);
+                                        if(soundNum == 0){
+                                            AM.bloop1.Play();
+                                        }
+                                    else if(soundNum == 1){
+                                        AM.bigSqueep.Play();
+                                    }
+                                    else if(soundNum == 2){
+                                        AM.bloop4.Play();
+                                    }
+                                    else if(soundNum == 3){
+                                        AM.brilliant2.Play();
+                                    }
+                                    else if(soundNum == 4){
+                                        AM.squeep.Play();
+                                    }
+                                    else if(soundNum == 5){
+                                        AM.stellar1.Play();
+                                    }
+                                    else if(soundNum == 6){
+                                        AM.radiant1.Play();
+                                    }
+                                    else if(soundNum == 7){
+                                        AM.matchSound.Play();
+                                    }
+                                    }
+                                    if(SceneManager.GetActiveScene().name == "Level 2")
+                                    {
+                                        int soundNum = Random.Range(0, 8);
+                                        if(soundNum == 0){
+                                            AM.bloop1.Play();
+                                        }
+                                    else if(soundNum == 1){
+                                        AM.radiant1.Play();
+                                    }
+                                    else if(soundNum == 2){
+                                        AM.bloop4.Play();
+                                    }
+                                    else if(soundNum == 3){
+                                        AM.luminous3.Play();
+                                    }
+                                    else if(soundNum == 4){
+                                        AM.squeep.Play();
+                                    }
+                                    else if(soundNum == 5){
+                                        AM.stellar1.Play();
+                                    }
+                                    else if(soundNum == 6){
+                                        AM.spectacular4.Play();
+                                        
+                                    }
+                                    else if(soundNum == 7){
+                                        AM.matchSound.Play();
+                                    }
+                                    
+                                    
+                                    }
+
+                                    if(SceneManager.GetActiveScene().name == "Level 3")
+                                    {
+                                        int soundNum = Random.Range(0, 8);
+                                        if(soundNum == 0){
+                                            AM.bloop1.Play();
+                                        }
+                                    else if(soundNum == 1){
+                                        AM.radiant1.Play();
+                                    }
+                                    else if(soundNum == 2){
+                                        AM.bloop4.Play();
+                                    }
+                                    else if(soundNum == 3){
+                                        AM.cosmic3.Play();
+                                    }
+                                    else if(soundNum == 4){
+                                        AM.squeep.Play();
+                                    }
+                                    else if(soundNum == 5){
+                                        AM.stellar1.Play();
+                                    }
+                                    else if(soundNum == 6){
+                                        AM.spectacular4.Play();
+                                    }
+                                    else if(soundNum == 7){
+                                        AM.matchSound.Play();
+                                    }
+                                    
+                                    }
                                     
                                 }
                             
@@ -225,7 +489,95 @@ public class FindMatches : MonoBehaviour
                                         scoreManager.IncreaseScore(50);
                                     }
                                     wasLargeVMatch = true;
-                                    //
+                                    if(SceneManager.GetActiveScene().name == "Level 1")
+                                    {
+                                        int soundNum = Random.Range(0, 8);
+                                        if(soundNum == 0){
+                                            AM.bloop1.Play();
+                                        }
+                                    else if(soundNum == 1){
+                                        AM.bigSqueep.Play();
+                                    }
+                                    else if(soundNum == 2){
+                                        AM.bloop4.Play();
+                                    }
+                                    else if(soundNum == 3){
+                                        AM.brilliant2.Play();
+                                    }
+                                    else if(soundNum == 4){
+                                        AM.squeep.Play();
+                                    }
+                                    else if(soundNum == 5){
+                                        AM.stellar1.Play();
+                                    }
+                                    else if(soundNum == 6){
+                                        AM.radiant1.Play();
+                                    }
+                                    else if(soundNum == 7){
+                                        AM.matchSound.Play();
+                                    }
+                                    }
+                                    if(SceneManager.GetActiveScene().name == "Level 2")
+                                    {
+                                        int soundNum = Random.Range(0, 8);
+                                        if(soundNum == 0){
+                                            AM.bloop1.Play();
+                                        }
+                                    else if(soundNum == 1){
+                                        AM.radiant1.Play();
+                                    }
+                                    else if(soundNum == 2){
+                                        AM.bloop4.Play();
+                                    }
+                                    else if(soundNum == 3){
+                                        AM.luminous3.Play();
+                                    }
+                                    else if(soundNum == 4){
+                                        AM.squeep.Play();
+                                    }
+                                    else if(soundNum == 5){
+                                        AM.stellar1.Play();
+                                    }
+                                    else if(soundNum == 6){
+                                        AM.spectacular4.Play();
+                                        
+                                    }
+                                    else if(soundNum == 7){
+                                        AM.matchSound.Play();
+                                    }
+                                    
+                                    
+                                    }
+
+                                    if(SceneManager.GetActiveScene().name == "Level 3")
+                                    {
+                                        int soundNum = Random.Range(0, 8);
+                                        if(soundNum == 0){
+                                            AM.bloop1.Play();
+                                        }
+                                    else if(soundNum == 1){
+                                        AM.radiant1.Play();
+                                    }
+                                    else if(soundNum == 2){
+                                        AM.bloop4.Play();
+                                    }
+                                    else if(soundNum == 3){
+                                        AM.cosmic3.Play();
+                                    }
+                                    else if(soundNum == 4){
+                                        AM.squeep.Play();
+                                    }
+                                    else if(soundNum == 5){
+                                        AM.stellar1.Play();
+                                    }
+                                    else if(soundNum == 6){
+                                        AM.spectacular4.Play();
+                                    }
+                                    else if(soundNum == 7){
+                                        AM.matchSound.Play();
+                                    }
+                                    
+                                    }
 
                                             }
 
@@ -275,7 +627,95 @@ public class FindMatches : MonoBehaviour
                                         scoreManager.IncreaseScore(25);
                                     }
                                     wasLargeVMatch = true;
-                                    //
+                                    if(SceneManager.GetActiveScene().name == "Level 1")
+                                    {
+                                        int soundNum = Random.Range(0, 8);
+                                        if(soundNum == 0){
+                                            AM.bloop1.Play();
+                                        }
+                                    else if(soundNum == 1){
+                                        AM.bigSqueep.Play();
+                                    }
+                                    else if(soundNum == 2){
+                                        AM.bloop4.Play();
+                                    }
+                                    else if(soundNum == 3){
+                                        AM.brilliant2.Play();
+                                    }
+                                    else if(soundNum == 4){
+                                        AM.squeep.Play();
+                                    }
+                                    else if(soundNum == 5){
+                                        AM.stellar1.Play();
+                                    }
+                                    else if(soundNum == 6){
+                                        AM.radiant1.Play();
+                                    }
+                                    else if(soundNum == 7){
+                                        AM.matchSound.Play();
+                                    }
+                                    }
+                                    if(SceneManager.GetActiveScene().name == "Level 2")
+                                    {
+                                        int soundNum = Random.Range(0, 8);
+                                        if(soundNum == 0){
+                                            AM.bloop1.Play();
+                                        }
+                                    else if(soundNum == 1){
+                                        AM.radiant1.Play();
+                                    }
+                                    else if(soundNum == 2){
+                                        AM.bloop4.Play();
+                                    }
+                                    else if(soundNum == 3){
+                                        AM.luminous3.Play();
+                                    }
+                                    else if(soundNum == 4){
+                                        AM.squeep.Play();
+                                    }
+                                    else if(soundNum == 5){
+                                        AM.stellar1.Play();
+                                    }
+                                    else if(soundNum == 6){
+                                        AM.spectacular4.Play();
+                                        
+                                    }
+                                    else if(soundNum == 7){
+                                        AM.matchSound.Play();
+                                    }
+                                    
+                                    
+                                    }
+
+                                    if(SceneManager.GetActiveScene().name == "Level 3")
+                                    {
+                                        int soundNum = Random.Range(0, 8);
+                                        if(soundNum == 0){
+                                            AM.bloop1.Play();
+                                        }
+                                    else if(soundNum == 1){
+                                        AM.radiant1.Play();
+                                    }
+                                    else if(soundNum == 2){
+                                        AM.bloop4.Play();
+                                    }
+                                    else if(soundNum == 3){
+                                        AM.cosmic3.Play();
+                                    }
+                                    else if(soundNum == 4){
+                                        AM.squeep.Play();
+                                    }
+                                    else if(soundNum == 5){
+                                        AM.stellar1.Play();
+                                    }
+                                    else if(soundNum == 6){
+                                        AM.spectacular4.Play();
+                                    }
+                                    else if(soundNum == 7){
+                                        AM.matchSound.Play();
+                                    }
+                                    
+                                    }
 
                                             }
 
@@ -322,7 +762,95 @@ for (int i = 0; i < board.width; i++)
                                     }
                                     
                                     wasLargeVMatch = true;
-                                    //
+                                    if(SceneManager.GetActiveScene().name == "Level 1")
+                                    {
+                                        int soundNum = Random.Range(0, 8);
+                                        if(soundNum == 0){
+                                            AM.bloop1.Play();
+                                        }
+                                    else if(soundNum == 1){
+                                        AM.bigSqueep.Play();
+                                    }
+                                    else if(soundNum == 2){
+                                        AM.bloop4.Play();
+                                    }
+                                    else if(soundNum == 3){
+                                        AM.brilliant2.Play();
+                                    }
+                                    else if(soundNum == 4){
+                                        AM.squeep.Play();
+                                    }
+                                    else if(soundNum == 5){
+                                        AM.stellar1.Play();
+                                    }
+                                    else if(soundNum == 6){
+                                        AM.radiant1.Play();
+                                    }
+                                    else if(soundNum == 7){
+                                        AM.matchSound.Play();
+                                    }
+                                    }
+                                    if(SceneManager.GetActiveScene().name == "Level 2")
+                                    {
+                                        int soundNum = Random.Range(0, 8);
+                                        if(soundNum == 0){
+                                            AM.bloop1.Play();
+                                        }
+                                    else if(soundNum == 1){
+                                        AM.radiant1.Play();
+                                    }
+                                    else if(soundNum == 2){
+                                        AM.bloop4.Play();
+                                    }
+                                    else if(soundNum == 3){
+                                        AM.luminous3.Play();
+                                    }
+                                    else if(soundNum == 4){
+                                        AM.squeep.Play();
+                                    }
+                                    else if(soundNum == 5){
+                                        AM.stellar1.Play();
+                                    }
+                                    else if(soundNum == 6){
+                                        AM.spectacular4.Play();
+                                        
+                                    }
+                                    else if(soundNum == 7){
+                                        AM.matchSound.Play();
+                                    }
+                                    
+                                    
+                                    }
+
+                                    if(SceneManager.GetActiveScene().name == "Level 3")
+                                    {
+                                        int soundNum = Random.Range(0, 8);
+                                        if(soundNum == 0){
+                                            AM.bloop1.Play();
+                                        }
+                                    else if(soundNum == 1){
+                                        AM.radiant1.Play();
+                                    }
+                                    else if(soundNum == 2){
+                                        AM.bloop4.Play();
+                                    }
+                                    else if(soundNum == 3){
+                                        AM.cosmic3.Play();
+                                    }
+                                    else if(soundNum == 4){
+                                        AM.squeep.Play();
+                                    }
+                                    else if(soundNum == 5){
+                                        AM.stellar1.Play();
+                                    }
+                                    else if(soundNum == 6){
+                                        AM.spectacular4.Play();
+                                    }
+                                    else if(soundNum == 7){
+                                        AM.matchSound.Play();
+                                    }
+                                    
+                                    }
 
                                             }
 
@@ -334,4 +862,8 @@ for (int i = 0; i < board.width; i++)
                                             }
     }
                             }
+
+                            
+                                    
+                                
 
