@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3977,6 +3977,29 @@ PrefabInstance:
       value: Star Card Menu
       objectReference: {fileID: 0}
     - target: {fileID: 7671498825917152012, guid: dae3130a993aa1f4393c2e7ce6c6410e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8083811077148254865, guid: dae3130a993aa1f4393c2e7ce6c6410e, type: 3}
+      propertyPath: m_text
+      value: 'Greetings, I am Neutron Star. When a massive star undergoes gravitational
+        collapse, all its protons and electrons are compressed together and I am
+        born. A sugar cube sized piece of me would weigh the same as Mount Everest. 
+        Most of us know neutron stars exist as a subclass of stars known as pulsars.
+        These types of stars spin because in the explosion that collapses the outer
+        layers of the stars we once were, angular momentum is preserved and we can
+        spin twenty times or more per second. For reference, if Earth spun this fast
+        everyone would be hurled off the surface of the planet and all life would
+        die. When we form we are extremely hot, averaging around 1000255.372K but
+        we produce no heat of our own eventually we cool down as all our heat is
+        lost to the dark void of space. Even though I am a million times fainter
+        than the Sun, the brightest neutron star ever discovered was still 1,000
+        times brighter than scientists first thought we could be. I am still one
+        of the most important stars in the universe. I am the main creator of heavy
+        elements like gold and uranium. So next time you put on that shiny gold ring
+        remember to thank me for exploding. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8160145878271370392, guid: dae3130a993aa1f4393c2e7ce6c6410e, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

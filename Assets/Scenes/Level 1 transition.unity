@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -181,10 +181,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "????: You will help fuse hydrogen using the heat generated from the nuclear
-    fusion! At around 10 million Kelvin you are going to fuse the hydrogen to generate
-    helium and create sunlight. This next star is big, hot, and bright. You may want
-    to grab some sunscreen and a pair of sunglasses. \r"
+  m_text: "Stranger: You will help FUSE HYDROGEN using the heat generated from the
+    NUCLEAR FUSION! At around 10 million Kelvin you are going to fuse the hydrogen
+    to generate helium and create sunlight. This next star is big, hot, and bright.
+    You may want to grab some sunscreen and a pair of sunglasses. \r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -296,7 +296,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -102.5, y: -261}
+  m_AnchoredPosition: {x: -102.5, y: -294}
   m_SizeDelta: {x: 203, y: 74.6464}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &80997613
@@ -319,7 +319,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Press the arrow to begin the mission
+  m_text: 'Press the arrow to begin:
+
+    MISSION 2
+
+    STARLIGHT
 
 
 '
@@ -492,7 +496,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &210093979
 RectTransform:
   m_ObjectHideFlags: 0
@@ -762,7 +766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &643457442
 RectTransform:
   m_ObjectHideFlags: 0
@@ -955,7 +959,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' ????: Vessel 1609? Come in Vessel 1609.
+  m_text: 'Stranger: Vessel 1609? Come in Vessel 1609.
 
 '
   m_isRightToLeft: 0
@@ -1051,7 +1055,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &821892202
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1069,7 +1073,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 95.75844, y: -256}
+  m_AnchoredPosition: {x: 105, y: -244}
   m_SizeDelta: {x: 957.4276, y: 107.6359}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &821892203
@@ -1092,10 +1096,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "????: Ah, yes, a smart question indeed. For a few million years the star
-    will burn the hydrogen until it runs out. After that the helium starts being
+  m_text: "Stranger: Ah, yes, a smart question indeed. For a few million years the
+    star will burn the hydrogen until it runs out. After that the helium starts being
     used to make different elements. For the star you are about to help, it is still
-    primarily using hydrogen. However, you may come across some carbon on your journey.
+    primarily using hydrogen. However, you may come across some CARBON on your journey.
     It shouldn\u2019t pose a problem to you, just focus on the hydrogen and helium
     and you will be just fine. I believe in you."
   m_isRightToLeft: 0
@@ -1232,8 +1236,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '????: I have been around this galaxy for a long, long time, Doran. Do
-    you have any questions regarding your next mission?'
+  m_text: 'Stranger: I have been around this galaxy for a long, long time, Doran.
+    Do you have any questions regarding your next mission?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2005,10 +2009,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '????: Great job on that mission! You helped create Main Sequence, who
-    sends you thanks as well. Because of your skill with Main Sequence, news of your
-    ability has spread across the galaxy and there are others who are in need of
-    your assistance. There is a star in need of your help to generate starlight. '
+  m_text: 'Stranger: Great job on that mission! You helped create Main Sequence,
+    who sends you thanks as well. Because of your skill with Main Sequence, news
+    of your ability has spread across the galaxy and there are others who are in
+    need of your assistance. There is a star in need of your help to generate STARLIGHT. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2102,7 +2106,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1557682740
 RectTransform:
   m_ObjectHideFlags: 0

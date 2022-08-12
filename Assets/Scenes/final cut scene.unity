@@ -181,9 +181,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Supernova:  I believe that you are exactly who I need. When a star like
+  m_text: "Supernova: I believe that you are exactly who I need. When a star like
     myself begins to cool down after burning through all our fuel, the strength of
-    gravity pressing in becomes greater than the heat and the pressure being generated
+    GRAVITY pressing in becomes greater than the HEAT and the PRESSURE being generated
     by the reactions in the star\u2019s core.\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -296,7 +296,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -102.5, y: -261}
+  m_AnchoredPosition: {x: -102.5, y: -243}
   m_SizeDelta: {x: 203, y: 74.6464}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &80997613
@@ -319,10 +319,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Press the arrow to begin the mission
+  m_text: 'Press the arrow to begin:
 
+    MISSION 3
 
-'
+    NUCLEOSYNTHESIS'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1097,9 +1098,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "????: Yes I do, but this one is a little bit different. First off I would
-    like to introduce myself. I\u2019m Supernova. Your skills are impressive and
-    you have proven yourself a quick learner on those past two missions."
+  m_text: "Stranger: Yes I do, but this one is a little bit different. First off
+    I would like to introduce myself. I\u2019m SUPERNOVA. Your skills are impressive
+    and you have proven yourself a quick learner on those past two missions."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1876,8 +1877,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Captain Doran: Hello again, Stranger. It\u2019s nice to hear from you
-    again. Do you have another mission for me?\n\n"
+  m_text: "Captain Doran: Hello again, Stranger. It\u2019s nice to hear from you.
+    Do you have another mission for me?\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
