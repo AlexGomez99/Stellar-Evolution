@@ -3454,11 +3454,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &1064535838 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 473903336787143295, guid: e0902f284d31ef2498df7f974e6be915, type: 3}
-  m_PrefabInstance: {fileID: 473903336272325985}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1064535839 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 473903336787143294, guid: e0902f284d31ef2498df7f974e6be915, type: 3}
@@ -6000,6 +5995,7 @@ MonoBehaviour:
   tryAgain3: {fileID: 348271071}
   tryAgain4: {fileID: 742907936}
   winner2: {fileID: 404550698}
+  ambientSpaceNoise: {fileID: 0}
 --- !u!4 &1938769726
 Transform:
   m_ObjectHideFlags: 0
@@ -8714,9 +8710,29 @@ PrefabInstance:
     m_TransformParent: {fileID: 356563790}
     m_Modifications:
     - target: {fileID: 7671498825574723189, guid: dae3130a993aa1f4393c2e7ce6c6410e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7671498825574723189, guid: dae3130a993aa1f4393c2e7ce6c6410e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7671498825574723189, guid: dae3130a993aa1f4393c2e7ce6c6410e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1064535838}
+      objectReference: {fileID: 1459162982713332844}
+    - target: {fileID: 7671498825574723189, guid: dae3130a993aa1f4393c2e7ce6c6410e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 7671498825574723189, guid: dae3130a993aa1f4393c2e7ce6c6410e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7671498825574723189, guid: dae3130a993aa1f4393c2e7ce6c6410e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7671498825917152011, guid: dae3130a993aa1f4393c2e7ce6c6410e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8804,6 +8820,10 @@ PrefabInstance:
     - target: {fileID: 7671498825917152012, guid: dae3130a993aa1f4393c2e7ce6c6410e, type: 3}
       propertyPath: m_Name
       value: Star Card Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7671498825917152012, guid: dae3130a993aa1f4393c2e7ce6c6410e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dae3130a993aa1f4393c2e7ce6c6410e, type: 3}
