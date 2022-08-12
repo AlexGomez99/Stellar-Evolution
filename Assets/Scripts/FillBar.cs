@@ -10,9 +10,9 @@ public class FillBar : MonoBehaviour
 
     public Image fillBar;
 
-    public float lev1max = 1250;
-    public float lev2max = 1500;
-    public float lev3max = 2000;
+    private float lev1max = 2000;
+    private float lev2max = 3000;
+    private float lev3max = 4000;
 
     // Start is called before the first frame update
     void Start()

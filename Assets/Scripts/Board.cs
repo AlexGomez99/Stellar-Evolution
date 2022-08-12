@@ -30,6 +30,7 @@ public class Board : MonoBehaviour
     private float streakValue = 1.0f;
     private ScoreManager scoreManager;
     private PowerUpManager powerUpManager;
+    private AudioManager AM;
     public static bool GameIsPaused = false;
     //private bool specialSpawn = false;
 
@@ -49,11 +50,13 @@ public class Board : MonoBehaviour
         starCard = FindObjectOfType<StarCard>();
         powerUpManager = FindObjectOfType<PowerUpManager>();
         scoreManager = FindObjectOfType<ScoreManager>();
+        AM = FindObjectOfType<AudioManager>();
         findMatches = FindObjectOfType<FindMatches>();
         allTiles = new BackgroundTile[width, height];
         allDots = new GameObject[width, height];
 
         SetUp();
+        AM.anotherAscension.Play();
     }
 
     public void SetUp()
@@ -419,7 +422,7 @@ public class Board : MonoBehaviour
     {
         
         int dotNum = 0;
-        dotNum = Random.Range(0, 50);
+        dotNum = Random.Range(0, 40);
         
         if(dotNum < 1)
         {
@@ -428,7 +431,7 @@ public class Board : MonoBehaviour
         else
         {
 
-            dotNum = Random.Range(0, 100);
+            dotNum = Random.Range(0, 85);
             if(dotNum < 5)
             {
                 return 1;
@@ -479,13 +482,14 @@ public class Board : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Level 1")
         {
-            if (scoreManager.score > 1250)
+            if (scoreManager.score > 2000)
             {
                 gameoverMenu.SetActive(true);
                 victorText.SetActive(true);
                 continueButton.SetActive(true);
                 lossText.SetActive(false);
                 reTryButton.SetActive(false);
+                PlayerPrefs.SetInt("SC1", 1);
             }
             else
             {
@@ -494,11 +498,12 @@ public class Board : MonoBehaviour
                 reTryButton.SetActive(true);
                 victorText.SetActive(false);
                 continueButton.SetActive(false);
+                PlayerPrefs.SetInt("SC2", 1);
             }
         }
         else if (SceneManager.GetActiveScene().name == "Level 2")
         {
-            if (scoreManager.score > 1500)
+            if (scoreManager.score > 3000)
             {
                 Debug.Log("you won");
                 gameoverMenu.SetActive(true);
@@ -506,6 +511,7 @@ public class Board : MonoBehaviour
                 continueButton.SetActive(true);
                 lossText.SetActive(false);
                 reTryButton.SetActive(false);
+                PlayerPrefs.SetInt("SC3", 1);
             }
             else
             {
@@ -515,18 +521,20 @@ public class Board : MonoBehaviour
                 reTryButton.SetActive(true);
                 victorText.SetActive(false);
                 continueButton.SetActive(false);
+                PlayerPrefs.SetInt("SC4", 1);
             }
         }
         else
         if (SceneManager.GetActiveScene().name == "Level 3")
         {
-            if (scoreManager.score > 2000)
+            if (scoreManager.score > 4000)
             {
                 gameoverMenu.SetActive(true);
                 victorText.SetActive(true);
                 continueButton.SetActive(true);
                 lossText.SetActive(false);
                 reTryButton.SetActive(false);
+                PlayerPrefs.SetInt("SC5", 1);
             }
             else
             {
@@ -535,6 +543,7 @@ public class Board : MonoBehaviour
                 reTryButton.SetActive(true);
                 victorText.SetActive(false);
                 continueButton.SetActive(false);
+                PlayerPrefs.SetInt("SC6", 1);
             }
         }
 
