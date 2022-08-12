@@ -41,6 +41,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource tryAgain4;
     public AudioSource winner2;
     public AudioSource ambientSpaceNoise;
+    public AudioSource starSwapTheme;
 
     // Start is called before the first frame update
     void Start()
