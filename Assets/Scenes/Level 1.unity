@@ -3083,6 +3083,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 356563790}
     m_Modifications:
+    - target: {fileID: 2309938988845327893, guid: 6906f53bbfe21114f866946e11397236, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: be3b0b5662bda44789dfeb2e892aa9e4, type: 3}
+    - target: {fileID: 2309938989511414335, guid: 6906f53bbfe21114f866946e11397236, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9c256a20fad8a474ab30445e1481b3dd, type: 3}
     - target: {fileID: 2309938989803449144, guid: 6906f53bbfe21114f866946e11397236, type: 3}
       propertyPath: m_Name
       value: Energy Meter

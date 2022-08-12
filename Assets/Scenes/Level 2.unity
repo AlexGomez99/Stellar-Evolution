@@ -2271,6 +2271,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 356563790}
     m_Modifications:
+    - target: {fileID: 2309938989511414335, guid: 6906f53bbfe21114f866946e11397236, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9c256a20fad8a474ab30445e1481b3dd, type: 3}
+    - target: {fileID: 2309938989511414335, guid: 6906f53bbfe21114f866946e11397236, type: 3}
+      propertyPath: m_FillAmount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2309938989803449144, guid: 6906f53bbfe21114f866946e11397236, type: 3}
       propertyPath: m_Name
       value: Energy Meter
@@ -2519,8 +2527,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1265536649}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1473, y: 0.0069, z: 195.9}
-  m_LocalScale: {x: 0.9696841, y: 0.9198436, z: 1}
+  m_LocalPosition: {x: -0.1473, y: -0.0135, z: 195.9}
+  m_LocalScale: {x: 0.9696841, y: 0.93635106, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 963194228}
@@ -3734,7 +3742,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e66f1eeb4c4a14bbbb466c954c5a88cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b116e4a8ac18e0b4e933704c25ffde90, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3753,8 +3761,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108054212}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1473, y: 0.0069, z: 196}
-  m_LocalScale: {x: 0.97601515, y: 0.9184114, z: 1}
+  m_LocalPosition: {x: -2.5777, y: 0.0674, z: 203.69}
+  m_LocalScale: {x: 0.26482785, y: 0.3023108, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 963194228}
