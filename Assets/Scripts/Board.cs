@@ -30,6 +30,7 @@ public class Board : MonoBehaviour
     private float streakValue = 1.0f;
     private ScoreManager scoreManager;
     private PowerUpManager powerUpManager;
+    private AudioManager AM;
     public static bool GameIsPaused = false;
     //private bool specialSpawn = false;
 
@@ -49,11 +50,13 @@ public class Board : MonoBehaviour
         starCard = FindObjectOfType<StarCard>();
         powerUpManager = FindObjectOfType<PowerUpManager>();
         scoreManager = FindObjectOfType<ScoreManager>();
+        AM = FindObjectOfType<AudioManager>();
         findMatches = FindObjectOfType<FindMatches>();
         allTiles = new BackgroundTile[width, height];
         allDots = new GameObject[width, height];
 
         SetUp();
+        AM.anotherAscension.Play();
     }
 
     public void SetUp()

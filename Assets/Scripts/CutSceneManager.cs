@@ -22,6 +22,15 @@ public class CutSceneManager : MonoBehaviour
 
     public int counter = 0;
 
+    public AudioManager AM;
+
+    private void Start()
+    {
+        AM = FindObjectOfType<AudioManager>();
+        AM.ascendingSaucer.Play();
+    }
+
+
     public void changeclip()
     {
         if (counter == 0)
