@@ -56,7 +56,10 @@ public class Board : MonoBehaviour
         allDots = new GameObject[width, height];
 
         SetUp();
-        AM.anotherAscension.Play();
+
+            AM.bloop1.Play();
+        
+        
     }
 
     public void SetUp()
@@ -150,6 +153,9 @@ public class Board : MonoBehaviour
             //  findMatches.currentMatches.Remove(allDots[column, row]);
             Destroy(allDots[column, row]);
             
+            
+            
+            AM.bloop1.Play();
             
 
 
@@ -320,6 +326,7 @@ public class Board : MonoBehaviour
         if (IsDeadlocked())
         {
             Debug.Log("Deadlocked!!!");
+            AM.powerDown.Play();
             Gameover();
 
         }
@@ -482,7 +489,7 @@ public class Board : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Level 1")
         {
-            if (scoreManager.score > 2000)
+            if (scoreManager.score >= 2000)
             {
                 gameoverMenu.SetActive(true);
                 victorText.SetActive(true);
@@ -499,11 +506,12 @@ public class Board : MonoBehaviour
                 victorText.SetActive(false);
                 continueButton.SetActive(false);
                 PlayerPrefs.SetInt("SC2", 1);
+                AM.tryAgain4.Play();
             }
         }
         else if (SceneManager.GetActiveScene().name == "Level 2")
         {
-            if (scoreManager.score > 3000)
+            if (scoreManager.score >= 3000)
             {
                 Debug.Log("you won");
                 gameoverMenu.SetActive(true);
@@ -522,12 +530,13 @@ public class Board : MonoBehaviour
                 victorText.SetActive(false);
                 continueButton.SetActive(false);
                 PlayerPrefs.SetInt("SC4", 1);
+                AM.tryAgain4.Play();
             }
         }
         else
         if (SceneManager.GetActiveScene().name == "Level 3")
         {
-            if (scoreManager.score > 4000)
+            if (scoreManager.score >= 4000)
             {
                 gameoverMenu.SetActive(true);
                 victorText.SetActive(true);
@@ -544,6 +553,7 @@ public class Board : MonoBehaviour
                 victorText.SetActive(false);
                 continueButton.SetActive(false);
                 PlayerPrefs.SetInt("SC6", 1);
+                AM.tryAgain4.Play();
             }
         }
 

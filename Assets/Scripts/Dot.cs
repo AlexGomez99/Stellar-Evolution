@@ -28,7 +28,7 @@ public class Dot : MonoBehaviour
     private Vector2 firstTouchPosition;
     private Vector2 finalTouchPosition;
 
-
+    private AudioManager AM;
     private Vector2 tempPosition;
     public float swipeAngle = 0;
     public float swipeResist = 1f;
@@ -42,7 +42,7 @@ public class Dot : MonoBehaviour
         powerUpManager = FindObjectOfType<PowerUpManager>();
         findMatches = FindObjectOfType<FindMatches>();
         moveTargets = FindObjectOfType<MoveTargets>();
-
+        AM = FindObjectOfType<AudioManager>();
 
         //targetX = (int)transform.position.x;
         //targetY = (int)transform.position.y;
@@ -122,6 +122,7 @@ public class Dot : MonoBehaviour
                 column = previousColumn;
                 yield return new WaitForSeconds(.5f);
                 board.currentState = GameState.move;
+                AM.error3.Play();
             }
             else
             {

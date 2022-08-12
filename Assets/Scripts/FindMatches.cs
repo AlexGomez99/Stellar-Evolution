@@ -74,7 +74,7 @@ public class FindMatches : MonoBehaviour
                                         scoreManager.IncreaseScore(50);
                                     }
                                     wasLargeHMatch = true;
-                                    AM.matchSound.Play();
+                                    //AM.matchSound.Play();
                                 }
                             }
                         }
@@ -125,7 +125,7 @@ public class FindMatches : MonoBehaviour
                                         scoreManager.IncreaseScore(45);
                                     }
                                     wasLargeHMatch = true;
-                                    AM.matchSound.Play();
+                                    //
                                 }
                             }
                         }
@@ -171,7 +171,7 @@ public class FindMatches : MonoBehaviour
                                     }else{
                                         scoreManager.IncreaseScore(15);
                                     }
-                                    AM.matchSound.Play();
+                                    //
                                     
                                 }
                             
@@ -225,7 +225,7 @@ public class FindMatches : MonoBehaviour
                                         scoreManager.IncreaseScore(50);
                                     }
                                     wasLargeVMatch = true;
-                                    AM.matchSound.Play();
+                                    //
 
                                             }
 
@@ -275,7 +275,7 @@ public class FindMatches : MonoBehaviour
                                         scoreManager.IncreaseScore(25);
                                     }
                                     wasLargeVMatch = true;
-                                    AM.matchSound.Play();
+                                    //
 
                                             }
 
@@ -322,7 +322,7 @@ for (int i = 0; i < board.width; i++)
                                     }
                                     
                                     wasLargeVMatch = true;
-                                    AM.matchSound.Play();
+                                    //
 
                                             }
 

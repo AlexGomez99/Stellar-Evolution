@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class StartSceneManager : MonoBehaviour
 {
+    private AudioManager AM;
     // Start is called before the first frame update
     void Start()
     {
-        
+        AM = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
@@ -21,5 +22,7 @@ public class StartSceneManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("Opening Scene");
+        AM.ascendingSaucer.Play();
+        
     }
 }
