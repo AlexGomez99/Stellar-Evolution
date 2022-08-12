@@ -25,4 +25,8 @@ public class StartSceneManager : MonoBehaviour
         AM.ascendingSaucer.Play();
         
     }
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("Start Scene");
+    }
 }
