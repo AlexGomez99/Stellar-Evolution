@@ -465,7 +465,7 @@ public class Board : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().name == "Level 3")
         {
-            SceneManager.LoadScene("Opening Scene");
+            SceneManager.LoadScene("End Scene");
         }
     }
 

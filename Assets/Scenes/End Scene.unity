@@ -841,21 +841,22 @@ MonoBehaviour:
     Cedits:
 
 
-    Project Manager:
-    Daniel Smalley
+    Project Coach: Trent
+    Simmons
+
+
+    Project Manager: Daniel Smalley
 
     Game Designer: Em K. Findley
 
-    Developer: Jackson Sawyer
-    Singley
+    Developer:
+    Jackson Sawyer Singley
 
     Developer: Alex Gomez
 
     Artist: Clare Hidalgo
 
-
-    Project Coach:
-    Trent Simmons'
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -968,8 +969,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14, y: 10.0765}
-  m_SizeDelta: {x: 809.42, y: 540.4876}
+  m_AnchoredPosition: {x: -14, y: 6.6984}
+  m_SizeDelta: {x: 809.42, y: 547.2438}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1446086555
 MonoBehaviour:
