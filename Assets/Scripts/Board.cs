@@ -558,4 +558,9 @@ public class Board : MonoBehaviour
         }
 
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
