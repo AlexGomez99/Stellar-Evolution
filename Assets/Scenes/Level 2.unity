@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3210,6 +3210,33 @@ PrefabInstance:
     - target: {fileID: 7671498825917152012, guid: dae3130a993aa1f4393c2e7ce6c6410e, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8083811077148254865, guid: dae3130a993aa1f4393c2e7ce6c6410e, type: 3}
+      propertyPath: m_text
+      value: "Hello, I am White Dwarf. I am one of the oldest type of stars in the
+        universe, if not the oldest. In fact, some of us are around 14 billion years
+        old which means we are still cooling off from the formation of the universe.
+        However, our average age is thought to be around 8 billion years plus or
+        minus 200 million years based on newer research. I can be observed in a sort
+        of stellar retirement community in the Milky Way. Although I am often very
+        challenging to see directly with a telescope, it is thought that around 40,000
+        White Dwarfs are living within the nearest globular cluster to Earth called
+        M4. Our community of stars is assumed to be about 14 billion years old, or
+        the same age as the universe! All of us grew up next together and all the
+        stars with 80% or more of the mass of the Sun at the conception at the universe
+        have all gone through the evolutionary stages of Main Sequence, Red Giants,
+        and now some of us have entered our twilight stages of evolution and become
+        White Dwarfs like me. When the Hubble Telescope was sent to observe the M4
+        cluster, the scientists who examined the photos realized that even at my
+        brightest I am no brighter than a 100 watt lightbulb. Don\u2019t let my low
+        lumosity confuse you though, I may not be a young whipper-snapper anymore,
+        but my low luminosity is simply a result of my outer layers of my atmosphere
+        being blown away into space creating a planetary nebula. The nebula will
+        continue to shine for between 20,000 and 50,000 years while continuing to
+        expand outward. I am the remaining core of the star I once was and will eventually
+        be only slightly larger than Earth. And even though I am elderly and small,
+        I am still considered to be among the hottest stars in the universe reaching
+        temperatures up to 100,000K.\r\n"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dae3130a993aa1f4393c2e7ce6c6410e, type: 3}

@@ -29,4 +29,7 @@ public class StartSceneManager : MonoBehaviour
     {
         SceneManager.LoadScene("Start Scene");
     }
+    public void Quit(){
+        Application.Quit();
+    }
 }
